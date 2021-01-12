@@ -1,1 +1,28 @@
+.header_top {
+  width: 100%;
+  height: 40px;
+  background-color: #122439;
+  color: $lightgray;
+  #infos {
+    @include centered;
+    @include flex;
+    justify-content: space-between;
 
+    i {
+      margin-right: 5px;
+    }
+
+    &_left, &_right {
+      height: 100%;
+      line-height: 40px;
+    }
+
+    &_right {
+      li {
+        display: inline-block;
+        margin: 0px 15px;
+      }
+    }
+
+  }
+}

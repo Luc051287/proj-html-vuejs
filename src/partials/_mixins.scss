@@ -23,8 +23,8 @@
   -moz-box-sizing: border-box;
 }
 
-@mixin clearfix($elem) {
-  $elem::after {
+@mixin clearfix {
+  &::after {
     clear: both;
     display: table;
     content: "";
