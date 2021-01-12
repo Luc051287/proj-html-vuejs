@@ -1,7 +1,14 @@
-.header_top {
+// header {
+//   background-image: url($jumboImage);
+//   background-repeat: no-repeat;
+//   background-position: center -180px;
+//   @include backgroundSize(cover);
+// }
+
+#header_top {
   width: 100%;
   height: 40px;
-  background-color: #122439;
+  background-color: $bigstone;
   color: $lightgray;
   #infos {
     @include centered;
@@ -24,5 +31,106 @@
       }
     }
 
+  }
+}
+
+#header_bottom {
+  width: 100%;
+  height: 800px;
+  //da modificare
+  background-color: white;
+  #navbar {
+    @include centered;
+    @include flex;
+    justify-content: space-between;
+    height: $navbarHeight;
+    background-color: transparent;
+
+    &_left {
+      @include flex;
+      align-items: center;
+      img {
+        height: 40px;
+      }
+    }
+
+    &_right {
+      height: 100%;
+      line-height: $navbarHeight;
+      li {
+        display: inline-block;
+        height: 100%;
+        text-transform: uppercase;
+        margin: 0px 20px;
+        font-size: 1.2em;
+        color: #1d2023;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .jumbotron {
+    width: 100%;
+    height: calc(100% - #{$navbarHeight});
+    position: relative;
+    overflow: hidden;
+  }
+
+  // vedere se mettere come after;
+  .child {
+    width: 100%;
+    height: 100%;
+    background-image: url($jumboImage);
+    background-repeat: no-repeat;
+    background-position: center -25px;
+    overflow: hidden;
+    @include backgroundSize(cover);
+    transform: scale(1.4);
+  }
+
+  #jumbotron_center {
+    background-color: transparent;
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    left: 50%;
+    width: 500px;
+    transform: translateX(-50%);
+
+    h1 {
+      margin-bottom: 10px;
+      span {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+      span:nth-child(1) {
+        color: $bigstone;
+      }
+      span:nth-child(2) {
+        color: $blueLagoon;
+        background-color: $lightgray;
+        padding: 0 10px;
+        margin-left: 5px;
+        border-radius: 5px;
+      }
+    }
+
+    p {
+      font-size: 1.4em;
+      margin-bottom: 40px;
+    }
+
+    .btn:nth-child(4) {
+      background-color: $colorWhite;
+      color: $blueLagoon;
+      border: 1px solid $blueLagoon;
+      margin-left: 20px;
+
+      &:hover {
+        background-color: $fountainBlue;
+        color: $colorWhite;
+        border: 1px solid $fountainBlue;
+      }
+    }
   }
 }
