@@ -2,15 +2,15 @@
   background-color: $greyNurse;
   width: 100%;
   // vedere se uguale per tutti
-  padding: 90px 0;
+  padding: $mainPadding 0;
 }
 
 #services_container {
 
-  & > p:nth-child(1) {
-    text-transform: uppercase;
-    color: $fountainBlue;
-  }
+  // & > p:nth-child(1) {
+  //   text-transform: uppercase;
+  //   color: $fountainBlue;
+  // }
 
 
   #see_all {
@@ -18,18 +18,18 @@
     justify-content: space-between;
 
     & > p {
-      width: 60%;
+      width: 70%;
     }
   }
 }
 
-#squares {
+.services_boxes {
   @include flex;
   justify-content: space-between;
   flex-wrap: wrap;
   .box {
     width: calc(100%/3 - 20px);
-    height: 220px;
+    height: 230px;
     padding: 40px 30px;
     margin: 15px 0;
     border-radius: 10px;
@@ -59,12 +59,60 @@
       }
     }
 
-    p:nth-child(2) {
-      font-size: 1.7em;
+    // p:nth-child(2) {
+    //   font-size: 1.7em;
+    // }
+
+    // p:nth-child(3) {
+    //   font-size: 1.2em;
+    // }
+  }
+}
+
+#the_company {
+  @include flex;
+  width: 100%;
+  height: 750px;
+  background-color: black;
+
+  .company {
+    height: 100%;
+    width: 50%;
+    span {
+      color: $colorWhite;
+    }
+    span.background {
+      background-color: #102328;
+      margin-left: 0;
     }
 
-    p:nth-child(3) {
-      font-size: 1.2em;
+    &.left {
+      padding: $mainPadding 5px;
+      color: $colorWhite;
+      @include flex;
+      justify-content: flex-end;
+
+      #right_item {
+        width: 60%;
+        @include flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+    &.right {
+      background-image: url($companyImage);
+      @include backgroundSize(cover);
+      background-repeat: no-repeat;
+    }
+  }
+
+  #company_boxes {
+    @include flex;
+    flex-wrap: wrap;
+
+    .box {
+      width: calc(100%/2);
+      margin-bottom: 30px;
     }
   }
 }

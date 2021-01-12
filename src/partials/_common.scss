@@ -19,6 +19,14 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1.7em;
+}
+
+p.sub_par {
+  font-size: 1.2em;
+}
+
 .container {
   @include centered;
 }
@@ -31,24 +39,41 @@ h2 {
   cursor: pointer;
   line-height: 42px;
   font-size: 1em;
-  padding: 0 26px;
+  padding: 0 18px;
 
   &:hover {
     background-color: $fountainBlue;
   }
 }
 
-span:nth-child(1) {
+.btn.second {
+  background-color: transparent;
+  color: $blueLagoon;
+  border: 1px solid $blueLagoon;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: $fountainBlue;
+    color: $colorWhite;
+    border: 1px solid $fountainBlue;
+  }
+}
+
+span {
   color: $bigstone;
 }
-span:nth-child(2) {
-  color: $blueLagoon;
-  background-color: #cfe3e4;
+span.background {
+  @include spanBackground($blueLagoon, $backGroundWordGray);
   padding: 0 10px;
   margin-left: 5px;
   border-radius: 5px;
 }
 
-.margin_bottom_services {
+.margin_bottom {
   margin-bottom: 30px;
+}
+
+.main_par {
+  text-transform: uppercase;
+  color: $fountainBlue;
 }

@@ -30,3 +30,8 @@
     content: "";
   }
 }
+
+@mixin spanBackground($colorOne, $colorTwo) {
+  color: $colorOne;
+  background-color: $colorTwo;
+}

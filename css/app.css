@@ -19,6 +19,14 @@ h2 span {
   font-size: 1.9em;
 }
 
+h3 {
+  font-size: 1.7em;
+}
+
+p.sub_par {
+  font-size: 1.2em;
+}
+
 .container {
   width: 1000px;
   margin: auto;
@@ -32,17 +40,29 @@ h2 span {
   cursor: pointer;
   line-height: 42px;
   font-size: 1em;
-  padding: 0 26px;
+  padding: 0 18px;
 }
 .btn:hover {
   background-color: #52bbba;
 }
 
-span:nth-child(1) {
+.btn.second {
+  background-color: transparent;
+  color: #038484;
+  border: 1px solid #038484;
+  margin-left: 20px;
+}
+.btn.second:hover {
+  background-color: #52bbba;
+  color: #FFFFFF;
+  border: 1px solid #52bbba;
+}
+
+span {
   color: #1e2d36;
 }
 
-span:nth-child(2) {
+span.background {
   color: #038484;
   background-color: #cfe3e4;
   padding: 0 10px;
@@ -50,8 +70,13 @@ span:nth-child(2) {
   border-radius: 5px;
 }
 
-.margin_bottom_services {
+.margin_bottom {
   margin-bottom: 30px;
+}
+
+.main_par {
+  text-transform: uppercase;
+  color: #52bbba;
 }
 
 #header_top {
@@ -61,8 +86,6 @@ span:nth-child(2) {
   color: #bcbebc;
 }
 #header_top #infos {
-  width: 1000px;
-  margin: auto;
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
@@ -85,8 +108,6 @@ span:nth-child(2) {
   background-color: white;
 }
 #header_bottom #navbar {
-  width: 1000px;
-  margin: auto;
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
@@ -109,7 +130,7 @@ span:nth-child(2) {
   display: inline-block;
   height: 100%;
   text-transform: uppercase;
-  margin: 0px 20px;
+  margin: 0px 15px;
   font-size: 1.2em;
   color: #1d2023;
   cursor: pointer;
@@ -153,17 +174,6 @@ span:nth-child(2) {
   font-size: 1.4em;
   margin-bottom: 40px;
 }
-#header_bottom #jumbotron_center .btn:nth-child(4) {
-  background-color: #FFFFFF;
-  color: #038484;
-  border: 1px solid #038484;
-  margin-left: 20px;
-}
-#header_bottom #jumbotron_center .btn:nth-child(4):hover {
-  background-color: #52bbba;
-  color: #FFFFFF;
-  border: 1px solid #52bbba;
-}
 
 #services {
   background-color: #eef1ed;
@@ -171,28 +181,24 @@ span:nth-child(2) {
   padding: 90px 0;
 }
 
-#services_container > p:nth-child(1) {
-  text-transform: uppercase;
-  color: #52bbba;
-}
 #services_container #see_all {
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
 }
 #services_container #see_all > p {
-  width: 60%;
+  width: 70%;
 }
 
-#squares {
+.services_boxes {
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#squares .box {
+.services_boxes .box {
   width: calc(100%/3 - 20px);
-  height: 220px;
+  height: 230px;
   padding: 40px 30px;
   margin: 15px 0;
   border-radius: 10px;
@@ -202,30 +208,74 @@ span:nth-child(2) {
   flex-direction: column;
   justify-content: space-between;
 }
-#squares .box_top {
+.services_boxes .box_top {
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
   align-items: flex-start;
 }
-#squares .box_top i:nth-child(1) {
+.services_boxes .box_top i:nth-child(1) {
   font-size: 2.9em;
   color: #038484;
 }
-#squares .box_top i:nth-child(2) {
+.services_boxes .box_top i:nth-child(2) {
   font-size: 1.4em;
   color: #52bbba;
   cursor: pointer;
   padding: 4px;
   border-radius: 50%;
 }
-#squares .box_top i:nth-child(2):hover {
+.services_boxes .box_top i:nth-child(2):hover {
   color: #56808e;
   background-color: #52bbba;
 }
-#squares .box p:nth-child(2) {
-  font-size: 1.7em;
+
+#the_company {
+  display: flex;
+  display: -ms-flexbox;
+  width: 100%;
+  height: 750px;
+  background-color: black;
 }
-#squares .box p:nth-child(3) {
-  font-size: 1.2em;
+#the_company .company {
+  height: 100%;
+  width: 50%;
+}
+#the_company .company span {
+  color: #FFFFFF;
+}
+#the_company .company span.background {
+  background-color: #102328;
+  margin-left: 0;
+}
+#the_company .company.left {
+  padding: 90px 5px;
+  color: #FFFFFF;
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: flex-end;
+}
+#the_company .company.left #right_item {
+  width: 60%;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#the_company .company.right {
+  background-image: url("../img/about-4.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+}
+#the_company #company_boxes {
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+}
+#the_company #company_boxes .box {
+  width: calc(100%/2);
+  margin-bottom: 30px;
 }

@@ -14,7 +14,7 @@
 
       <header>
         <div id="header_top">
-          <div id="infos">
+          <div id="infos" class="container">
             <div id="infos_left">
               <p><i class="fas fa-clock"></i>Open hours: Mon - Sat - 9:00 - 18:00</p>
             </div>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div id="header_bottom">
-          <nav id="navbar">
+          <nav id="navbar" class="container">
             <div id="navbar_left">
               <img src="img/logo.png" alt="">
             </div>
@@ -48,15 +48,13 @@
             </div>
           </nav>
           <div class="jumbotron">
-            <div class="child">
-
-            </div>
+            <div class="child"></div>
             <!-- <img src="img/bg-parallax.png" alt=""> -->
             <div id="jumbotron_center">
-              <h1> <span>Ready</span> <span>Team</span> </h1>
+              <h1> <span>Ready</span> <span class="background">Team</span> </h1>
               <p>No metter what your company needs, we will be ready to assist you in the best possible way</p>
               <button class="btn">GET IN TOUCH</button>
-              <button class="btn">READ MORE</button>
+              <button class="btn second">READ MORE</button>
             </div>
           </div>
         </div>
@@ -65,63 +63,100 @@
       <main>
         <div id="services">
           <div id= "services_container" class="container">
-            <p class="margin_bottom_services" >our business area</p>
-            <h2 class="margin_bottom_services"> <span>Excellence in</span> <span>Services</span> </h2>
-            <div id="see_all" class="margin_bottom_services">
-              <p>We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowed professionals. There are some options that you can hire.</p>
+            <p class="margin_bottom main_par" >our business area</p>
+            <h2 class="margin_bottom main_titles"> <span>Excellence in</span> <span class="background">Services</span> </h2>
+            <div id="see_all" class="margin_bottom">
+              <p class="sub_par">We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowed professionals. There are some options that you can hire.</p>
               <button class="btn">SEE ALL</button>
             </div>
-            <div id="squares">
+            <div class="services_boxes">
               <div class="box">
                 <div class="box_top">
                   <i class="fas fa-network-wired"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Audit & Assurance</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Audit & Assurance</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
               <div class="box">
                 <div class="box_top">
                   <i class="fas fa-briefcase"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Financial Advisory</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Financial Advisory</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
               <div class="box">
                 <div class="box_top">
                   <i class="far fa-chart-bar"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Analytics and M&A</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Analytics and M&A</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
               <div class="box">
                 <div class="box_top">
                   <i class="fas fa-plane"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Middle Marketing</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Middle Marketing</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
               <div class="box">
                 <div class="box_top">
                   <i class="fas fa-globe"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Legal Consulting</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Legal Consulting</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
               <div class="box">
                 <div class="box_top">
                   <i class="fas fa-inbox"></i>
                   <i class="fas fa-arrow-right"></i>
                 </div>
-                <p>Regulatory Risk</p>
-                <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                <h3>Regulatory Risk</h3>
+                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
             </div>
           </div>
+        </div>
+
+        <div id="the_company">
+          <div class="company left">
+            <div id="right_item">
+              <div class="right_up_container">
+                <p class="margin_bottom main_par" >about the network</p>
+                <h2 class="margin_bottom main_titles"> <span class="background">The</span> <span>Company</span> </h2>
+                <p class="sub_par">For 12 years we have been providing audit and warranty, financial advice, risk advice, taxes and related services to select clients.</p>
+              </div>
+              <div id="company_boxes">
+                <div class="box">
+                  <h3 class="margin_bottom"><i class="fas fa-medal"></i> Tradition</h3>
+                  <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                </div>
+                <div class="box">
+                  <h3 class="margin_bottom"><i class="fas fa-lock"></i> Security</h3>
+                  <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                </div>
+                <div class="box">
+                  <h3 class="margin_bottom"><i class="far fa-edit"></i> Certificate</h3>
+                  <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                </div>
+                <div class="box">
+                  <h3 class="margin_bottom"><i class="fas fa-graduation-cap"></i> Expertise</h3>
+                  <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                </div>
+              </div>
+              <div class="button_container">
+                <button class="btn">GET IN TOUCH</button>
+                <button class="btn second">READ MORE</button>
+              </div>
+            </div>
+          </div>
+
+          <!--metterlo come after-->
+          <div class="company right"></div>
         </div>
       </main>
 

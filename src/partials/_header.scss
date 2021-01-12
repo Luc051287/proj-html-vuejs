@@ -11,7 +11,6 @@
   background-color: $bigstone;
   color: $lightgray;
   #infos {
-    @include centered;
     @include flex;
     justify-content: space-between;
 
@@ -40,7 +39,6 @@
   //da modificare
   background-color: white;
   #navbar {
-    @include centered;
     @include flex;
     justify-content: space-between;
     height: $navbarHeight;
@@ -61,7 +59,7 @@
         display: inline-block;
         height: 100%;
         text-transform: uppercase;
-        margin: 0px 20px;
+        margin: 0px 15px;
         font-size: 1.2em;
         color: #1d2023;
         cursor: pointer;
@@ -108,19 +106,6 @@
     p {
       font-size: 1.4em;
       margin-bottom: 40px;
-    }
-
-    .btn:nth-child(4) {
-      background-color: $colorWhite;
-      color: $blueLagoon;
-      border: 1px solid $blueLagoon;
-      margin-left: 20px;
-
-      &:hover {
-        background-color: $fountainBlue;
-        color: $colorWhite;
-        border: 1px solid $fountainBlue;
-      }
     }
   }
 }
