@@ -15,6 +15,15 @@ a {
   color: #bcbebc;
 }
 
+h2 span {
+  font-size: 1.9em;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
 .btn {
   border: none;
   border-radius: 4px;
@@ -29,10 +38,26 @@ a {
   background-color: #52bbba;
 }
 
+span:nth-child(1) {
+  color: #1e2d36;
+}
+
+span:nth-child(2) {
+  color: #038484;
+  background-color: #cfe3e4;
+  padding: 0 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.margin_bottom_services {
+  margin-bottom: 30px;
+}
+
 #header_top {
   width: 100%;
   height: 40px;
-  background-color: #122439;
+  background-color: #1e2d36;
   color: #bcbebc;
 }
 #header_top #infos {
@@ -124,16 +149,6 @@ a {
   font-size: 2.5em;
   font-weight: bold;
 }
-#header_bottom #jumbotron_center h1 span:nth-child(1) {
-  color: #122439;
-}
-#header_bottom #jumbotron_center h1 span:nth-child(2) {
-  color: #038484;
-  background-color: #bcbebc;
-  padding: 0 10px;
-  margin-left: 5px;
-  border-radius: 5px;
-}
 #header_bottom #jumbotron_center p {
   font-size: 1.4em;
   margin-bottom: 40px;
@@ -148,4 +163,69 @@ a {
   background-color: #52bbba;
   color: #FFFFFF;
   border: 1px solid #52bbba;
+}
+
+#services {
+  background-color: #eef1ed;
+  width: 100%;
+  padding: 90px 0;
+}
+
+#services_container > p:nth-child(1) {
+  text-transform: uppercase;
+  color: #52bbba;
+}
+#services_container #see_all {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+}
+#services_container #see_all > p {
+  width: 60%;
+}
+
+#squares {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#squares .box {
+  width: calc(100%/3 - 20px);
+  height: 220px;
+  padding: 40px 30px;
+  margin: 15px 0;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#squares .box_top {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#squares .box_top i:nth-child(1) {
+  font-size: 2.9em;
+  color: #038484;
+}
+#squares .box_top i:nth-child(2) {
+  font-size: 1.4em;
+  color: #52bbba;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+}
+#squares .box_top i:nth-child(2):hover {
+  color: #56808e;
+  background-color: #52bbba;
+}
+#squares .box p:nth-child(2) {
+  font-size: 1.7em;
+}
+#squares .box p:nth-child(3) {
+  font-size: 1.2em;
 }

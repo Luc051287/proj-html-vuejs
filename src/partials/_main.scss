@@ -1,1 +1,70 @@
+#services {
+  background-color: $greyNurse;
+  width: 100%;
+  // vedere se uguale per tutti
+  padding: 90px 0;
+}
 
+#services_container {
+
+  & > p:nth-child(1) {
+    text-transform: uppercase;
+    color: $fountainBlue;
+  }
+
+
+  #see_all {
+    @include flex;
+    justify-content: space-between;
+
+    & > p {
+      width: 60%;
+    }
+  }
+}
+
+#squares {
+  @include flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .box {
+    width: calc(100%/3 - 20px);
+    height: 220px;
+    padding: 40px 30px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background-color: white;
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_top {
+      @include flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      i:nth-child(1) {
+        font-size: 2.9em;
+        color: $blueLagoon;
+      }
+      i:nth-child(2) {
+        font-size: 1.4em;
+        color: $fountainBlue;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 50%;
+        &:hover {
+          color: $smaltBlue;
+          background-color: $fountainBlue;
+        }
+      }
+    }
+
+    p:nth-child(2) {
+      font-size: 1.7em;
+    }
+
+    p:nth-child(3) {
+      font-size: 1.2em;
+    }
+  }
+}
