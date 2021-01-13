@@ -289,11 +289,18 @@
               <p class="margin_bottom main_par" >send a message</p>
               <h2 class="margin_bottom main_titles"> <span>Get in</span> <span class="background">Touch</span> </h2>
               <p class="sub_par">We will respond to your message as soon as possible.</p>
-              <form class="" action="index.html" method="post">
+              <form id="contact_form" action="index.html" method="post">
                 <input type="text" name="" value="" placeholder="Name">
                 <input type="text" name="" value="" placeholder="Email">
                 <input type="text" name="" value="" placeholder="Phone">
-                <input type="text" name="" value="" placeholder="">
+                <div class="custom-select" form="contact_form">
+                  <p value="0">More Info</p>
+                  <i class="fas fa-chevron-down"></i>
+                  <select form="contact_form">
+                    <option value="0">More Info</option>
+                  </select>
+                </div>
+                <!-- <input type="text" name="" value="" placeholder=""> -->
                 <textarea rows="5" placeholder="Message"></textarea>
                 <button type="submit" class="btn">SEND</button>
               </form>

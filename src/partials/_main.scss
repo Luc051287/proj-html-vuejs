@@ -325,6 +325,31 @@ main {
         textarea {
           width: 100%;
         }
+        .custom-select {
+          position: relative;
+          width: calc(50% - 20px);
+          background-color: $greyNurse;
+          border-radius: 5px;
+          cursor: pointer;
+          margin: 10px 20px 10px 0;
+          height: 43px;
+          padding: 0 10px;
+          @include flex;
+          justify-content: space-between;
+          align-items: center;
+          p {
+            color: $bigstone;
+            font-weight: 300;
+            line-height: 43px;
+          }
+          i {
+            font-size: 1.2em;
+            color: $darkgray;
+          }
+          select {
+            display: none; /*hide original SELECT element:*/
+          }
+        }
       }
     }
     &.right {

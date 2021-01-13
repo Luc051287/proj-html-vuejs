@@ -621,6 +621,33 @@ main {
 #form .form_details.left form textarea {
   width: 100%;
 }
+#form .form_details.left form .custom-select {
+  position: relative;
+  width: calc(50% - 20px);
+  background-color: #eef1ed;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 20px 10px 0;
+  height: 43px;
+  padding: 0 10px;
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  align-items: center;
+}
+#form .form_details.left form .custom-select p {
+  color: #1e2d36;
+  font-weight: 300;
+  line-height: 43px;
+}
+#form .form_details.left form .custom-select i {
+  font-size: 1.2em;
+  color: #55626A;
+}
+#form .form_details.left form .custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
 #form .form_details.right {
   width: 30%;
   margin-left: 30px;
