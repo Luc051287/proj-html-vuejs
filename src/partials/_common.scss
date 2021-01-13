@@ -92,6 +92,7 @@ span.background {
   text-transform: uppercase;
   color: $fountainBlue;
   font-weight: 700;
+  font-size: 0.8em;
 }
 
 .navbar_h {
@@ -102,16 +103,18 @@ span.background {
     height: 100%;
     text-transform: uppercase;
     margin: 0px 15px;
-    font-size: 1.2em;
     color: #1d2023;
     cursor: pointer;
+    font-weight: 300;
+  }
+  .btn {
+    font-size: 1.0em;
   }
 }
 
 .active_li {
   background-color: $backGroundWordGray;
   border-radius: 5px;
-  height: 40px;
-  line-height: 40px;
-  padding: 1px 7px;
+  line-height: 35px;
+  padding: 1px 10px;
 }
