@@ -1,20 +1,11 @@
-main {
-  z-index: -1;
-}
+// main {
+//   z-index: -1;
+// }
 
 #services {
   background-color: $greyNurse;
   width: 100%;
-  // vedere se uguale per tutti
   padding: $mainPadding 0;
-}
-
-#services_container {
-
-  // & > p:nth-child(1) {
-  //   text-transform: uppercase;
-  //   color: $fountainBlue;
-  // }
 
   .btn {
     font-size: 1.1em;
@@ -65,14 +56,6 @@ main {
         }
       }
     }
-
-    // p:nth-child(2) {
-    //   font-size: 1.7em;
-    // }
-
-    // p:nth-child(3) {
-    //   font-size: 1.2em;
-    // }
   }
 }
 
@@ -189,8 +172,6 @@ main {
         background-repeat: no-repeat;
         background-position: center;
         @include backgroundSize(cover);
-        // transform: scale(1.1);
-        // filter: blur(1px);
         background-image: url("../img/project-#{$i}.jpg");
       }
     }

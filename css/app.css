@@ -194,6 +194,24 @@ span.background {
   position: relative;
   overflow: hidden;
 }
+#header_bottom .jumbotron .jumbo_select {
+  position: absolute;
+  top: 45%;
+  left: 95%;
+}
+#header_bottom .jumbotron .jumbo_select > span {
+  display: block;
+  cursor: pointer;
+  width: 8px;
+  height: 28px;
+  background-color: transparent;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #038484;
+}
+#header_bottom .jumbotron .jumbo_select > span.j_active {
+  background-color: #038484;
+}
 #header_bottom #jumbotron_center {
   background-color: transparent;
   position: absolute;
@@ -221,25 +239,20 @@ span.background {
   margin: 10px auto 40px;
 }
 
-main {
-  z-index: -1;
-}
-
 #services {
   background-color: #eef1ed;
   width: 100%;
   padding: 90px 0;
 }
-
-#services_container .btn {
+#services .btn {
   font-size: 1.1em;
 }
-#services_container #see_all {
+#services #see_all {
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
 }
-#services_container #see_all > p {
+#services #see_all > p {
   width: 70%;
 }
 
