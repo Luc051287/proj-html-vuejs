@@ -35,3 +35,8 @@
   color: $colorOne;
   background-color: $colorTwo;
 }
+
+@mixin boxHover {
+  transform: scale(1.1);
+  filter: blur(1px);
+}

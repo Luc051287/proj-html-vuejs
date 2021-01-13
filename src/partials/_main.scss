@@ -16,6 +16,9 @@ main {
   //   color: $fountainBlue;
   // }
 
+  .btn {
+    font-size: 1.1em;
+  }
 
   #see_all {
     @include flex;
@@ -34,7 +37,7 @@ main {
   .box {
     width: calc(100%/3 - 20px);
     height: 230px;
-    padding: 40px 30px;
+    padding: 35px 30px;
     margin: 15px 0;
     border-radius: 10px;
     background-color: white;
@@ -77,7 +80,7 @@ main {
   @include flex;
   width: 100%;
   height: 750px;
-  background-color: black;
+  background-color: $woodSmoke;
 
   .company {
     height: 100%;
@@ -94,19 +97,24 @@ main {
       padding: $mainPadding 5px;
       color: $colorWhite;
       @include flex;
-      justify-content: flex-end;
 
       #right_item {
-        width: 60%;
+        width: 490px;
+        margin-left: auto;
         @include flex;
         flex-direction: column;
         justify-content: space-between;
+        p.sub_par {
+          color: $lightgray;
+          width: 95%;
+        }
       }
     }
     &.right {
       background-image: url($companyImage);
       @include backgroundSize(cover);
       background-repeat: no-repeat;
+
     }
   }
 
@@ -117,6 +125,102 @@ main {
     .box {
       width: calc(100%/2);
       margin-bottom: 30px;
+      i {
+        color: $fountainBlue;
+        margin-right: 5px;
+      }
     }
+  }
+}
+
+#actions_projects_container {
+  padding: $mainPadding 0;
+}
+
+#actions_projects {
+  .up_container {
+    text-align: center;
+  }
+
+  #projects_boxes {
+    @include flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @for $i from 1 through 6 {
+      .box:nth-child(#{$i})::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include backgroundSize(cover);
+        // transform: scale(1.1);
+        // filter: blur(1px);
+        background-image: url("../img/project-#{$i}.jpg");
+      }
+    }
+    .box {
+      position: relative;
+      width: calc(100%/3 - 20px);
+      height: 315px;
+      border-radius: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+      &:hover::before {
+        @include boxHover;
+      }
+      .box_description {
+        position: absolute;
+        @include flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: $colorWhite;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        text-align: center;
+        padding: 30px 0;
+
+        &:hover {
+          background-color: rgba(0,0,0,0.7);
+        }
+
+        .box_top {
+          @include flex;
+          justify-content: flex-end;
+          padding: 0 30px;
+          i {
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+          }
+        }
+
+        h3 {
+          font-size: 1.5em;
+        }
+
+        p.sub_par {
+          color: $colorWhite;
+          width: 70%;
+          margin: 0 auto;
+          margin-top: 10px;
+          display: none;
+        }
+
+        &:hover p {
+          display: block;
+        }
+        &:hover i {
+          display: inline-block;
+        }
+      }
+    }
+
   }
 }

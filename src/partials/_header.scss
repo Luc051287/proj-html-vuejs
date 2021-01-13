@@ -10,6 +10,7 @@
   height: 40px;
   background-color: $bigstone;
   color: $lightgray;
+  font-size: 0.85em;
   #infos {
     @include flex;
     justify-content: space-between;
@@ -68,17 +69,17 @@
     }
 
     &_right {
-      height: 100%;
-      line-height: $navbarHeight;
-      li {
-        display: inline-block;
-        height: 100%;
-        text-transform: uppercase;
-        margin: 0px 15px;
-        font-size: 1.2em;
-        color: #1d2023;
-        cursor: pointer;
-      }
+      // height: 100%;
+      // line-height: $navbarHeight;
+      // li {
+      //   display: inline-block;
+      //   height: 100%;
+      //   text-transform: uppercase;
+      //   margin: 0px 15px;
+      //   font-size: 1.2em;
+      //   color: #1d2023;
+      //   cursor: pointer;
+      // }
     }
   }
 
@@ -118,18 +119,23 @@
     left: 50%;
     width: 500px;
     transform: translateX(-50%);
-
+    .btn {
+      font-size: 1em;
+      height: 42px;
+      line-height: 42px;
+    }
     h1 {
       margin-bottom: 10px;
       span {
-        font-size: 2.5em;
-        font-weight: bold;
+        font-size: 2.4em;
+        font-weight: 800;
       }
     }
 
     p {
-      font-size: 1.4em;
-      margin-bottom: 40px;
+      font-size: 1.3em;
+      width: 90%;
+      margin: 10px auto 40px;
     }
   }
 }

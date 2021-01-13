@@ -6,11 +6,18 @@
 
 body {
   font-size: $fontSizeMain;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
   text-decoration: none;
   color: $lightgray;
+}
+
+p {
+  color: $bigstone;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -21,10 +28,12 @@ h2 {
 
 h3 {
   font-size: 1.7em;
+  font-weight: 500;
 }
 
 p.sub_par {
-  font-size: 1.2em;
+  font-size: 1em;
+  line-height: 25px;
 }
 
 .container {
@@ -33,12 +42,13 @@ p.sub_par {
 
 .btn {
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: $blueLagoon;
   color: $colorWhite;
   cursor: pointer;
-  line-height: 42px;
-  font-size: 1em;
+  height: 40px;
+  line-height: 40px;
+  font-size: 0.85em;
   padding: 0 18px;
 
   &:hover {
@@ -76,4 +86,27 @@ span.background {
 .main_par {
   text-transform: uppercase;
   color: $fountainBlue;
+  font-weight: 700;
+}
+
+.navbar_h {
+  height: 100%;
+  line-height: $navbarHeight;
+  li {
+    display: inline-block;
+    height: 100%;
+    text-transform: uppercase;
+    margin: 0px 15px;
+    font-size: 1.2em;
+    color: #1d2023;
+    cursor: pointer;
+  }
+}
+
+.active_li {
+  background-color: $backGroundWordGray;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  padding: 1px 7px;
 }
