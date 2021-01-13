@@ -23,7 +23,12 @@
       height: 100%;
       line-height: 40px;
     }
-
+    &_left {
+      p {
+        color: $lightgray;
+        font-weight: 400;
+      }
+    }
     &_right {
       li {
         display: inline-block;
@@ -39,6 +44,7 @@
   height: 730px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
   &::before {
     content: "";
     display: block;
@@ -51,6 +57,7 @@
     background-position: center;
     @include backgroundSize(cover);
     transform: scale(1.32);
+    z-index: -1;
   }
   //da modificare
   background-color: white;

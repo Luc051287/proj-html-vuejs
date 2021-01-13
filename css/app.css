@@ -14,6 +14,7 @@ body {
 a {
   text-decoration: none;
   color: #bcbebc;
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
@@ -131,6 +132,10 @@ span.background {
   height: 100%;
   line-height: 40px;
 }
+#header_top #infos_left p {
+  color: #bcbebc;
+  font-weight: 400;
+}
 #header_top #infos_right li {
   display: inline-block;
   margin: 0px 15px;
@@ -141,6 +146,7 @@ span.background {
   height: 730px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
   background-color: white;
 }
 #header_bottom::before {
@@ -158,6 +164,7 @@ span.background {
   -moz-background-size: cover;
   -o-background-size: cover;
   transform: scale(1.32);
+  z-index: -1;
 }
 #header_bottom #navbar {
   display: flex;
