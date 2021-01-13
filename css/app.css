@@ -191,14 +191,6 @@ span.background {
   position: relative;
   overflow: hidden;
 }
-#header_bottom .jumbotron::after {
-  content: "";
-  display: block;
-  position: relative;
-  border: 1px solid black;
-  height: 50px;
-  width: 50px;
-}
 #header_bottom #jumbotron_center {
   background-color: transparent;
   position: absolute;
@@ -679,4 +671,58 @@ main {
   color: #038484;
   background-color: #eef1ed;
   text-align: center;
+}
+
+#footer_top {
+  width: 100%;
+  padding: 90px 0;
+  background-color: #111117;
+  height: 510px;
+}
+#footer_top_container {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30px 0;
+}
+#footer_top_container .footer_box {
+  width: calc(100%/4 - 20px);
+  height: 100%;
+}
+#footer_top_container .footer_box.first li {
+  margin: 10px 0;
+}
+#footer_top_container .footer_box.first p {
+  color: #bcbebc;
+  width: 90%;
+  margin: 20px 0;
+}
+#footer_top_container .footer_box ul:not(.first) li:first-child {
+  margin-bottom: 20px;
+}
+#footer_top_container .footer_box ul:not(.first) li {
+  margin: 5px 10px;
+}
+#footer_top_container .footer_box li.list_title {
+  color: #FFFFFF;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+#footer_top_container .footer_box i {
+  margin-right: 10px;
+}
+#footer_top_container .footer_box:not(.first) {
+  border-radius: 5px;
+  background-color: #18181d;
+  padding: 30px;
+}
+#footer_top_container .footer_box.first img {
+  max-width: 150px;
+}
+#footer_top_container .footer_box.first .btn {
+  margin-left: 0;
+  font-size: 1.1em;
+  color: #FFFFFF;
+  margin-top: 10px;
 }
