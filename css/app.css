@@ -733,6 +733,19 @@ main {
   position: relative;
   background-color: #0F0F12;
 }
+#footer_bottom > i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 1.3em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #19191b;
+  color: #0f1417;
+  padding: 12px;
+}
 #footer_bottom_container {
   height: 100%;
   display: flex;
