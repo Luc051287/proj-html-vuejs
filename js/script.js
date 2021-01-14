@@ -7,6 +7,10 @@ var app = new Vue(
       mainLogo: "logo.png",
       projectsTypes: ["all","institutional", "social", "events", "innovation", "environment", "technology"],
       openingTime: ["clock", "Open hours: Mon - Sat - 9:00 - 18:00"],
+      mainInfosNav: {
+        phoneNumber: ["#", "phone-alt", "+1 (305) 1234-5678"],
+        email: ["#", "envelope", "hello@example.com"],
+      },
       mainInfos: {
         phoneNumber: ["#", "phone-alt", "+1 (305) 1234-5678"],
         email: ["#", "envelope", "hello@example.com"],
@@ -180,7 +184,12 @@ var app = new Vue(
       ]
     },
     methods: {
-
+      scroll: function(key) {
+        setTimeout(function() {
+          let elmnt = document.getElementById(key);
+          elmnt.scrollIntoView();
+        },0);
+      }
     },
     computed: {
       filteredProjects: function() {

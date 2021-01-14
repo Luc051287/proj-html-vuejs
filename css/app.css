@@ -79,8 +79,10 @@ p.sub_par {
 }
 .btn.second:hover {
   background-color: #52bbba;
-  color: #FFFFFF;
   border: 1px solid #52bbba;
+}
+.btn.second:hover a {
+  color: #FFFFFF;
 }
 
 span {
@@ -162,44 +164,49 @@ span.background {
   margin: 0px 10px;
 }
 
-#header_bottom {
+#navbar {
   width: 100%;
-  height: 730px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: white;
+  background-color: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
-#header_bottom > img {
-  position: absolute;
-  bottom: 110px;
-  width: 100%;
-  transform: scale(1.94);
-  z-index: -1;
-}
-#header_bottom #navbar {
+#navbar #navbar_container {
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
   height: 70px;
   background-color: transparent;
 }
-#header_bottom #navbar_left {
+#navbar #navbar_container #navbar_left {
   display: flex;
   display: -ms-flexbox;
   align-items: center;
 }
-#header_bottom #navbar_left img {
+#navbar #navbar_container #navbar_left img {
   height: 40px;
 }
-#header_bottom #navbar_right li > a:hover {
+#navbar #navbar_container #navbar_right li > a:hover {
   color: #038484;
+}
+
+#header_bottom {
+  width: 100%;
+  height: 730px;
+  background-color: white;
 }
 #header_bottom .jumbotron {
   width: 100%;
   height: calc(100% - 70px);
   position: relative;
   overflow: hidden;
+}
+#header_bottom .jumbotron > img {
+  position: absolute;
+  bottom: 97px;
+  width: 100%;
+  transform: scale(1.94);
 }
 #header_bottom .jumbotron .jumbo_select {
   position: absolute;
@@ -303,7 +310,7 @@ span.background {
   background-color: #52bbba;
 }
 
-#the_company {
+#about {
   display: flex;
   display: -ms-flexbox;
   width: 100%;
@@ -311,12 +318,12 @@ span.background {
   background-color: #111117;
   position: relative;
 }
-#the_company .btn {
+#about .btn {
   font-size: 1em;
   height: 42px;
   line-height: 42px;
 }
-#the_company .bullets {
+#about .bullets {
   width: 130px;
   height: 50px;
   overflow: hidden;
@@ -326,7 +333,7 @@ span.background {
   filter: opacity(30%);
   transform: translateX(-50%);
 }
-#the_company .bullets::before {
+#about .bullets::before {
   content: "";
   display: block;
   background-image: url("../img/bullets.png");
@@ -338,34 +345,34 @@ span.background {
   height: 100%;
   transform: scale(2.3);
 }
-#the_company .bullets:nth-last-child(2) {
+#about .bullets:nth-last-child(2) {
   top: calc(100% - 30px);
 }
-#the_company > img {
+#about > img {
   position: absolute;
   top: 0;
   left: 0;
   display: none;
 }
-#the_company .company {
+#about .company {
   height: 100%;
   width: 50%;
 }
-#the_company .company span {
+#about .company span {
   color: #FFFFFF;
 }
-#the_company .company span.background {
+#about .company span.background {
   background-color: #102328;
   margin-left: 0;
   margin-right: 5px;
 }
-#the_company .company.left {
+#about .company.left {
   padding: 90px 5px;
   color: #FFFFFF;
   display: flex;
   display: -ms-flexbox;
 }
-#the_company .company.left #right_item {
+#about .company.left #right_item {
   width: 490px;
   margin-left: auto;
   display: flex;
@@ -373,11 +380,11 @@ span.background {
   flex-direction: column;
   justify-content: space-between;
 }
-#the_company .company.left #right_item p.sub_par {
+#about .company.left #right_item p.sub_par {
   color: #bcbebc;
   width: 95%;
 }
-#the_company .company.right {
+#about .company.right {
   background-image: url("../img/about-4.jpg");
   background-size: cover;
   -webkit-background-size: cover;
@@ -385,16 +392,16 @@ span.background {
   -o-background-size: cover;
   background-repeat: no-repeat;
 }
-#the_company #company_boxes {
+#about #company_boxes {
   display: flex;
   display: -ms-flexbox;
   flex-wrap: wrap;
 }
-#the_company #company_boxes .box {
+#about #company_boxes .box {
   width: calc(100%/2);
   margin-bottom: 30px;
 }
-#the_company #company_boxes .box i {
+#about #company_boxes .box i {
   color: #52bbba;
   margin-right: 5px;
 }
@@ -403,16 +410,16 @@ span.background {
   padding: 90px 0;
 }
 
-#actions_projects .up_container {
+#projects .up_container {
   text-align: center;
 }
-#actions_projects #projects_boxes {
+#projects #projects_boxes {
   display: flex;
   display: -ms-flexbox;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-#actions_projects #projects_boxes .box {
+#projects #projects_boxes .box {
   position: relative;
   width: calc(100%/3 - 20px);
   height: 315px;
@@ -420,17 +427,17 @@ span.background {
   margin: 10px 0;
   overflow: hidden;
 }
-#actions_projects #projects_boxes .box > img {
+#projects #projects_boxes .box > img {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
 }
-#actions_projects #projects_boxes .box:hover > img {
+#projects #projects_boxes .box:hover > img {
   transform: scale(1.1);
   filter: blur(1px);
 }
-#actions_projects #projects_boxes .box .box_description {
+#projects #projects_boxes .box .box_description {
   position: absolute;
   display: flex;
   display: -ms-flexbox;
@@ -445,31 +452,31 @@ span.background {
   text-align: center;
   padding: 30px 0;
 }
-#actions_projects #projects_boxes .box .box_description:hover {
+#projects #projects_boxes .box .box_description:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-#actions_projects #projects_boxes .box .box_description .box_top {
+#projects #projects_boxes .box .box_description .box_top {
   display: flex;
   display: -ms-flexbox;
   justify-content: flex-end;
   padding: 0 30px;
 }
-#actions_projects #projects_boxes .box .box_description .box_top i {
+#projects #projects_boxes .box .box_description .box_top i {
   font-size: 1.5em;
   cursor: pointer;
   display: none;
 }
-#actions_projects #projects_boxes .box .box_description h3 {
+#projects #projects_boxes .box .box_description h3 {
   font-size: 1.5em;
 }
-#actions_projects #projects_boxes .box .box_description p.sub_par {
+#projects #projects_boxes .box .box_description p.sub_par {
   color: #FFFFFF;
   width: 70%;
   margin: 0 auto;
   margin-top: 10px;
   display: none;
 }
-#actions_projects #projects_boxes .box .box_description:hover p, #actions_projects #projects_boxes .box .box_description:hover i {
+#projects #projects_boxes .box .box_description:hover p, #projects #projects_boxes .box .box_description:hover i {
   display: block;
   color: #FFFFFF;
 }

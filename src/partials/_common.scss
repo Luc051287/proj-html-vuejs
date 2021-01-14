@@ -78,8 +78,10 @@ p.sub_par {
   }
   &:hover {
     background-color: $fountainBlue;
-    color: $colorWhite;
     border: 1px solid $fountainBlue;
+  }
+  &:hover a {
+    color: $colorWhite;
   }
 }
 
