@@ -28,6 +28,7 @@ var app = new Vue(
       readMoreBtn: "#",
       viewMapBtn: "#",
       seeAllBtn: "#",
+      inTouchBtn: "#",
       services: {
         audit: ["#", "network-wired", "Audit & Assurance"],
         financial:["#", "briefcase", "Financial Advisory"],
