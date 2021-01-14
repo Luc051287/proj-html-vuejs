@@ -59,6 +59,7 @@ p.sub_par {
   line-height: 40px;
   font-size: 0.85em;
   padding: 0 18px;
+  transition: background-color 0.3s;
   & > a {
     color: $colorWhite;
     font-size: 0.9em;
