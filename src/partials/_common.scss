@@ -13,6 +13,10 @@ a {
   text-decoration: none;
   color: $lightgray;
   font-family: 'Montserrat', sans-serif;
+  &:hover {
+    color: $blueLagoon;
+  }
+  // cursor: pointer;
 }
 
 p {
@@ -55,7 +59,10 @@ p.sub_par {
   line-height: 40px;
   font-size: 0.85em;
   padding: 0 18px;
-
+  & > a {
+    color: $colorWhite;
+    font-size: 0.9em;
+  }
   &:hover {
     background-color: $fountainBlue;
   }
@@ -66,7 +73,9 @@ p.sub_par {
   color: $blueLagoon;
   border: 1px solid $blueLagoon;
   margin-left: 20px;
-
+  & > a {
+    color: $blueLagoon;
+  }
   &:hover {
     background-color: $fountainBlue;
     color: $colorWhite;
@@ -107,6 +116,11 @@ span.background {
     font-weight: 300;
     line-height: 35px;
     padding: 1px 10px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    & > a {
+      color: #1d2023;
+    }
   }
   .btn {
     font-size: 1.0em;

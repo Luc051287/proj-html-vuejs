@@ -40,11 +40,11 @@
       @include flex;
       justify-content: space-between;
       align-items: flex-start;
-      i:nth-child(1) {
+      & > i:nth-child(1) {
         font-size: 2.9em;
         color: $blueLagoon;
       }
-      i:nth-child(2) {
+      a > i {
         font-size: 1.4em;
         color: $fountainBlue;
         cursor: pointer;
@@ -65,7 +65,11 @@
   height: 750px;
   background-color: $woodSmoke;
   position: relative;
-
+  .btn {
+    font-size: 1em;
+    height: 42px;
+    line-height: 42px;
+  }
   .bullets {
     &::before {
       content: "";
@@ -161,20 +165,6 @@
     @include flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @for $i from 1 through 6 {
-      .box:nth-child(#{$i})::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        @include backgroundSize(cover);
-        background-image: url("../img/project-#{$i}.jpg");
-      }
-    }
     .box {
       position: relative;
       width: calc(100%/3 - 20px);
@@ -182,7 +172,13 @@
       border-radius: 10px;
       margin: 10px 0;
       overflow: hidden;
-      &:hover::before {
+      & > img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:hover > img {
         @include boxHover;
       }
       .box_description {
@@ -228,6 +224,7 @@
 
         &:hover p, &:hover i {
           display: block;
+          color: $colorWhite;
         }
       }
     }
@@ -338,31 +335,19 @@
         textarea {
           width: 100%;
         }
-        .custom-select {
-          position: relative;
+        select {
+          appearance: none;
+          background: url("../img/chevron-down-solid.svg") 95% center no-repeat $greyNurse;
+          background-size: auto 30%;
+          border: none;
           width: calc(50% - 20px);
-          background-color: $greyNurse;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 10px 20px 10px 0;
+          padding: 10px;
           height: 43px;
-          padding: 0 10px;
-          @include flex;
-          justify-content: space-between;
-          align-items: center;
-          p {
-            color: $bigstone;
-            font-weight: 300;
-            line-height: 43px;
-            font-size: 1.1em;
-          }
-          i {
-            font-size: 1.2em;
-            color: $darkgray;
-          }
-          select {
-            display: none; /*hide original SELECT element:*/
-          }
+          margin: 10px 20px 10px 0;
+          font-size: 1.2em;
+          color: $bigstone;
+          font-weight: 200;
+          font-family: 'Montserrat', sans-serif;
         }
       }
     }

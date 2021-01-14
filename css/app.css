@@ -16,6 +16,9 @@ a {
   color: #bcbebc;
   font-family: "Montserrat", sans-serif;
 }
+a:hover {
+  color: #038484;
+}
 
 p {
   color: #1e2d36;
@@ -57,6 +60,10 @@ p.sub_par {
   font-size: 0.85em;
   padding: 0 18px;
 }
+.btn > a {
+  color: #FFFFFF;
+  font-size: 0.9em;
+}
 .btn:hover {
   background-color: #52bbba;
 }
@@ -66,6 +73,9 @@ p.sub_par {
   color: #038484;
   border: 1px solid #038484;
   margin-left: 20px;
+}
+.btn.second > a {
+  color: #038484;
 }
 .btn.second:hover {
   background-color: #52bbba;
@@ -109,6 +119,11 @@ span.background {
   font-weight: 300;
   line-height: 35px;
   padding: 1px 10px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.navbar_h li > a {
+  color: #1d2023;
 }
 .navbar_h .btn {
   font-size: 1em;
@@ -155,21 +170,11 @@ span.background {
   z-index: 1;
   background-color: white;
 }
-#header_bottom::before {
-  content: "";
-  display: block;
+#header_bottom > img {
   position: absolute;
-  bottom: 0;
+  bottom: 110px;
   width: 100%;
-  height: 100%;
-  background-image: url("../img/bg-parallax.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  transform: scale(1.32);
+  transform: scale(1.94);
   z-index: -1;
 }
 #header_bottom #navbar {
@@ -187,9 +192,8 @@ span.background {
 #header_bottom #navbar_left img {
   height: 40px;
 }
-#header_bottom #navbar_right li > a {
-  color: #1d2023;
-  font-family: "Poppins", sans-serif;
+#header_bottom #navbar_right li > a:hover {
+  color: #038484;
 }
 #header_bottom .jumbotron {
   width: 100%;
@@ -233,11 +237,11 @@ span.background {
   margin-bottom: 10px;
 }
 #header_bottom #jumbotron_center h1 span {
-  font-size: 2.4em;
+  font-size: 2em;
   font-weight: 800;
 }
 #header_bottom #jumbotron_center p {
-  font-size: 1.3em;
+  font-size: 1.2em;
   width: 90%;
   margin: 10px auto 40px;
 }
@@ -283,18 +287,18 @@ span.background {
   justify-content: space-between;
   align-items: flex-start;
 }
-.services_boxes .box_top i:nth-child(1) {
+.services_boxes .box_top > i:nth-child(1) {
   font-size: 2.9em;
   color: #038484;
 }
-.services_boxes .box_top i:nth-child(2) {
+.services_boxes .box_top a > i {
   font-size: 1.4em;
   color: #52bbba;
   cursor: pointer;
   padding: 4px;
   border-radius: 50%;
 }
-.services_boxes .box_top i:nth-child(2):hover {
+.services_boxes .box_top a > i:hover {
   color: #56808e;
   background-color: #52bbba;
 }
@@ -306,6 +310,11 @@ span.background {
   height: 750px;
   background-color: #111117;
   position: relative;
+}
+#the_company .btn {
+  font-size: 1em;
+  height: 42px;
+  line-height: 42px;
 }
 #the_company .bullets {
   width: 130px;
@@ -403,96 +412,6 @@ span.background {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-#actions_projects #projects_boxes .box:nth-child(1)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-1.jpg");
-}
-#actions_projects #projects_boxes .box:nth-child(2)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-2.jpg");
-}
-#actions_projects #projects_boxes .box:nth-child(3)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-3.jpg");
-}
-#actions_projects #projects_boxes .box:nth-child(4)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-4.jpg");
-}
-#actions_projects #projects_boxes .box:nth-child(5)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-5.jpg");
-}
-#actions_projects #projects_boxes .box:nth-child(6)::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-image: url("../img/project-6.jpg");
-}
 #actions_projects #projects_boxes .box {
   position: relative;
   width: calc(100%/3 - 20px);
@@ -501,7 +420,13 @@ span.background {
   margin: 10px 0;
   overflow: hidden;
 }
-#actions_projects #projects_boxes .box:hover::before {
+#actions_projects #projects_boxes .box > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#actions_projects #projects_boxes .box:hover > img {
   transform: scale(1.1);
   filter: blur(1px);
 }
@@ -546,6 +471,7 @@ span.background {
 }
 #actions_projects #projects_boxes .box .box_description:hover p, #actions_projects #projects_boxes .box .box_description:hover i {
   display: block;
+  color: #FFFFFF;
 }
 
 #results {
@@ -667,33 +593,21 @@ span.background {
 #form .form_details.left form textarea {
   width: 100%;
 }
-#form .form_details.left form .custom-select {
-  position: relative;
+#form .form_details.left form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../img/chevron-down-solid.svg") 95% center no-repeat #eef1ed;
+  background-size: auto 30%;
+  border: none;
   width: calc(50% - 20px);
-  background-color: #eef1ed;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px 20px 10px 0;
+  padding: 10px;
   height: 43px;
-  padding: 0 10px;
-  display: flex;
-  display: -ms-flexbox;
-  justify-content: space-between;
-  align-items: center;
-}
-#form .form_details.left form .custom-select p {
-  color: #1e2d36;
-  font-weight: 300;
-  line-height: 43px;
-  font-size: 1.1em;
-}
-#form .form_details.left form .custom-select i {
+  margin: 10px 20px 10px 0;
   font-size: 1.2em;
-  color: #55626A;
-}
-#form .form_details.left form .custom-select select {
-  display: none;
-  /*hide original SELECT element:*/
+  color: #1e2d36;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
 }
 #form .form_details.right {
   width: 30%;

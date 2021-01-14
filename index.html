@@ -22,27 +22,23 @@
             </div>
             <div id="infos_right">
               <ul>
-                <li v-for="value in mainInfos"><i :class="'fas fa-' + value[1]"></i><a :href="value[0]"></a>{{value[2]}}</li>
+                <li v-for="value in mainInfos"><i :class="'fas fa-' + value[1]"></i><a :href="value[0]">{{value[2]}}</a></li>
                 <li v-for="value in social"><a :href="value[0]"><i :class="'fab fa-' + value[1]"></i></a></li>
               </ul>
             </div>
           </div>
         </div>
         <div id="header_bottom">
+          <img src="img/bg-parallax.png" alt="">
           <nav id="navbar" class="container">
             <div id="navbar_left">
               <img :src="'img/' + mainLogo" alt="">
             </div>
             <div id="navbar_right">
               <ul class="navbar_h">
-                <li v-for="(value, key, index) in mainNavBar" :class="(index == indexNavMenu) ? active_li : '' " @click="indexNavMenu = index"><a :href="value">{{key}}</a></li>
-                <!-- <li class="active_li"><a href="#">home</a></li>
-                <li>services</li>
-                <li>about</li>
-                <li>projects</li>
-                <li>results</li> -->
+                <li v-for="(value, key, index) in mainNavBar"><a :href="value">{{key}}</a></li>
                 <li>
-                   <button class="btn">GET IN TOUCH</button>
+                   <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
                 </li>
               </ul>
             </div>
@@ -51,8 +47,8 @@
             <div id="jumbotron_center">
               <h1> <span>Ready</span> <span class="background">Team</span> </h1>
               <p>No matter what your company needs, we will be ready to assist you in the best possible way</p>
-              <button class="btn">GET IN TOUCH</button>
-              <button class="btn second">READ MORE</button>
+              <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
+              <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
             </div>
             <div class="jumbo_select">
               <span class="j_active"></span>
@@ -70,55 +66,15 @@
             <h2 class="margin_bottom main_titles"> <span>Excellence in</span> <span class="background">Services</span> </h2>
             <div id="see_all" class="margin_bottom">
               <p class="sub_par">We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowed professionals. There are some options that you can hire.</p>
-              <button class="btn">SEE ALL</button>
+              <button class="btn"><a :href="seeAllBtn">SEE ALL</a></button>
             </div>
             <div class="services_boxes">
-              <div class="box">
+              <div v-for="value in services" class="box">
                 <div class="box_top">
-                  <i class="fas fa-network-wired"></i>
-                  <i class="fas fa-arrow-right"></i>
+                  <i :class="'fas fa-' + value[1]"></i>
+                  <a :href="value[0]"><i class="fas fa-arrow-right"></i></a>
                 </div>
-                <h3>Audit & Assurance</h3>
-                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-              </div>
-              <div class="box">
-                <div class="box_top">
-                  <i class="fas fa-briefcase"></i>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <h3>Financial Advisory</h3>
-                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-              </div>
-              <div class="box">
-                <div class="box_top">
-                  <i class="far fa-chart-bar"></i>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <h3>Analytics and M&A</h3>
-                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-              </div>
-              <div class="box">
-                <div class="box_top">
-                  <i class="fas fa-plane"></i>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <h3>Middle Marketing</h3>
-                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-              </div>
-              <div class="box">
-                <div class="box_top">
-                  <i class="fas fa-globe"></i>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <h3>Legal Consulting</h3>
-                <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-              </div>
-              <div class="box">
-                <div class="box_top">
-                  <i class="fas fa-inbox"></i>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <h3>Regulatory Risk</h3>
+                <h3>{{value[2]}}</h3>
                 <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               </div>
             </div>
@@ -155,8 +111,8 @@
                 </div>
               </div>
               <div class="button_container">
-                <button class="btn">GET IN TOUCH</button>
-                <button class="btn second">READ MORE</button>
+                <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
+                <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
               </div>
             </div>
           </div>
@@ -171,80 +127,20 @@
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li class="active_li">all</li>
-                <li>institutional</li>
-                <li>social</li>
-                <li>events</li>
-                <li>innovation</li>
-                <li>environment</li>
-                <li>technology</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">
               <div id="projects_boxes">
-                <div class="box">
+                <div v-for="(project, index) in filteredProjects" class="box">
+                  <img :src="'img/' + project.imgSrc" alt="">
                   <div class="box_description">
                     <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
+                      <a :href="project.link"><i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="box_bottom">
-                      <h3>Academic professional program in social media</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box_description">
-                    <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="box_bottom">
-                      <h3>President's speech at the annual meeting</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box_description">
-                    <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="box_bottom">
-                      <h3>Iternational business trip Shangai</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box_description">
-                    <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="box_bottom">
-                      <h3>Technology workshop with education theme</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box_description">
-                    <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="box_bottom">
-                      <h3>Confraternization of the procurement team</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box_description">
-                    <div class="box_top">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="box_bottom">
-                      <h3>Confraternization of the procurement team</h3>
-                      <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
+                      <h3>{{project.title}}</h3>
+                      <p class="sub_par">{{project.paragraph}}</p>
                     </div>
                   </div>
                 </div>
@@ -258,21 +154,9 @@
             <p class="margin_bottom main_par" >what are we doing</p>
             <h2 class="margin_bottom main_titles"> <span class="background">Results</span> <span>in Numbers</span> </h2>
             <div class="numbers_boxes">
-              <div class="box">
-                <p>128</p>
-                <h3>Certifications</h3>
-              </div>
-              <div class="box">
-                <p>230</p>
-                <h3>Employees</h3>
-              </div>
-              <div class="box">
-                <p>517</p>
-                <h3>Customers</h3>
-              </div>
-              <div class="box">
-                <p>94</p>
-                <h3>Countries Served</h3>
+              <div v-for="value in results" class="box">
+                <p>{{value.count}}</p>
+                <h3>{{value.target}}</h3>
               </div>
             </div>
           </div>
@@ -280,12 +164,7 @@
 
         <div id="logos">
           <div id="logos_container" class="container">
-            <img src="img/logo-4.png" alt="">
-            <img src="img/logo-5.png" alt="">
-            <img src="img/logo-1.png" alt="">
-            <img src="img/logo-2.png" alt="">
-            <img src="img/logo-3.png" alt="">
-            <img src="img/logo-4.png" alt="">
+            <img v-for="logo in partnersLogo" :src="'img/' + logo" alt="">
           </div>
         </div>
 
@@ -299,14 +178,16 @@
                 <input type="text" name="" value="" placeholder="Name">
                 <input type="text" name="" value="" placeholder="Email">
                 <input type="text" name="" value="" placeholder="Phone">
-                <div class="custom-select" form="contact_form">
-                  <p value="0">More Info</p>
-                  <i class="fas fa-chevron-down"></i>
-                  <select form="contact_form">
-                    <option value="0">More Info</option>
-                  </select>
-                </div>
-                <!-- <input type="text" name="" value="" placeholder=""> -->
+                <select form="contact_form">
+                  <option value="0" disabled selected>More Info</option>
+                  <option value="1">Audit & Assurance</option>
+                  <option value="2">Financial Advisory</option>
+                  <option value="3">Analytics and M&A</option>
+                  <option value="4">Middle Marketing</option>
+                  <option value="5">Legal Consulting</option>
+                  <option value="6">Regulatory Risk</option>
+                  <option value="7">Other</option>
+                </select>
                 <textarea rows="5" placeholder="Message"></textarea>
                 <button type="submit" class="btn">SEND</button>
               </form>
@@ -316,11 +197,9 @@
               <p>Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
               <p>Praesent diam lacus, dapibus sed imperdiet consectetur.</p>
               <ul>
-                <li><a href="#"><i class="fas fa-phone-alt"></i>+1 (305) 1234-5678</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i>hello@example.com</a></li>
-                <li><a href="#"><i class="fas fa-map-marker-alt"></i>Main Avenue, 987</a></li>
+                <li v-for="info in mainInfos"><a :href="info[0]"><i :class="'fas fa-' + info[1]"></i>{{info[2]}}</a></li>
               </ul>
-              <button class="btn second">VIEW MAP</button>
+              <button class="btn second"><a :href="viewMapBtn">VIEW MAP</a></button>
             </div>
           </div>
         </div>
