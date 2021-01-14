@@ -100,12 +100,13 @@ span.background {
   line-height: $navbarHeight;
   li {
     display: inline-block;
-    height: 100%;
     text-transform: uppercase;
-    margin: 0px 15px;
+    margin: 0px 6px;
     color: #1d2023;
     cursor: pointer;
     font-weight: 300;
+    line-height: 35px;
+    padding: 1px 10px;
   }
   .btn {
     font-size: 1.0em;
@@ -115,6 +116,4 @@ span.background {
 .active_li {
   background-color: $backGroundWordGray;
   border-radius: 5px;
-  line-height: 35px;
-  padding: 1px 10px;
 }

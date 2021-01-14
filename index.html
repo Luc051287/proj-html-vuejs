@@ -18,15 +18,12 @@
         <div id="header_top">
           <div id="infos" class="container">
             <div id="infos_left">
-              <p><i class="fas fa-clock"></i>Open hours: Mon - Sat - 9:00 - 18:00</p>
+              <p><i :class="'fas fa-' + openingTime[0]"></i>{{openingTime[1]}}</p>
             </div>
             <div id="infos_right">
               <ul>
-                <li><i class="fas fa-phone-alt"></i><a href="#">+1 (305) 1234-5678</a></li>
-                <li><i class="fas fa-envelope"></i><a href="#">hello@example.com</a></li>
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li v-for="value in mainInfos"><i :class="'fas fa-' + value[1]"></i><a :href="value[0]"></a>{{value[2]}}</li>
+                <li v-for="value in social"><a :href="value[0]"><i :class="'fab fa-' + value[1]"></i></a></li>
               </ul>
             </div>
           </div>
@@ -34,15 +31,16 @@
         <div id="header_bottom">
           <nav id="navbar" class="container">
             <div id="navbar_left">
-              <img src="img/logo.png" alt="">
+              <img :src="'img/' + mainLogo" alt="">
             </div>
             <div id="navbar_right">
               <ul class="navbar_h">
-                <li>home</li>
+                <li v-for="(value, key, index) in mainNavBar" :class="(index == indexNavMenu) ? active_li : '' " @click="indexNavMenu = index"><a :href="value">{{key}}</a></li>
+                <!-- <li class="active_li"><a href="#">home</a></li>
                 <li>services</li>
                 <li>about</li>
                 <li>projects</li>
-                <li>results</li>
+                <li>results</li> -->
                 <li>
                    <button class="btn">GET IN TOUCH</button>
                 </li>

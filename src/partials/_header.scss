@@ -67,6 +67,12 @@
         height: 40px;
       }
     }
+    &_right {
+      li > a {
+        color: #1d2023;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
   }
 
   .jumbotron {

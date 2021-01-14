@@ -102,12 +102,13 @@ span.background {
 }
 .navbar_h li {
   display: inline-block;
-  height: 100%;
   text-transform: uppercase;
-  margin: 0px 15px;
+  margin: 0px 6px;
   color: #1d2023;
   cursor: pointer;
   font-weight: 300;
+  line-height: 35px;
+  padding: 1px 10px;
 }
 .navbar_h .btn {
   font-size: 1em;
@@ -116,8 +117,6 @@ span.background {
 .active_li {
   background-color: #cfe3e4;
   border-radius: 5px;
-  line-height: 35px;
-  padding: 1px 10px;
 }
 
 #header_top {
@@ -187,6 +186,10 @@ span.background {
 }
 #header_bottom #navbar_left img {
   height: 40px;
+}
+#header_bottom #navbar_right li > a {
+  color: #1d2023;
+  font-family: "Poppins", sans-serif;
 }
 #header_bottom .jumbotron {
   width: 100%;
