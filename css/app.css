@@ -187,7 +187,7 @@ span.background {
 #navbar #navbar_container #navbar_left img {
   height: 40px;
 }
-#navbar #navbar_container #navbar_right li > a:hover {
+#navbar #navbar_container #navbar_right li > span.main_navbar:hover {
   color: #038484;
 }
 

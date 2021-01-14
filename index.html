@@ -33,7 +33,7 @@
           </div>
           <div id="navbar_right">
             <ul class="navbar_h">
-              <li v-for="(value, key, index) in mainNavBar" @click="scroll(key)"><a :href="value">{{key}}</a></li>
+              <li v-for="(value, key, index) in mainNavBar" @click="scroll(key)"><span class="main_navbar">{{key}}</span></li>
               <li>
                  <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
               </li>

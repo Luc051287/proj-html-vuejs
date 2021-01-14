@@ -52,7 +52,7 @@
       }
     }
     #navbar_right {
-      li > a {
+      li > span.main_navbar {
         &:hover {
           color: $blueLagoon;
         }

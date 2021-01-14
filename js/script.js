@@ -185,11 +185,14 @@ var app = new Vue(
     },
     methods: {
       scroll: function(key) {
-        setTimeout(function() {
-          let elmnt = document.getElementById(key);
-          elmnt.scrollIntoView();
-        },0);
-      }
+        let section;
+        if (key == "home") {
+          section = document.getElementById("header_bottom");
+        } else {
+          section = document.getElementById(key);
+        }
+        section.scrollIntoView({ behavior: 'smooth'});
+      },
     },
     computed: {
       filteredProjects: function() {
