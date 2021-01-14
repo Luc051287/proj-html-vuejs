@@ -99,7 +99,85 @@ var app = new Vue(
           count: 94
         }
       ],
-      partnersLogo: ["logo-4.png","logo-5.png","logo-1.png","logo-2.png","logo-3.png","logo-4.png"]
+      partnersLogo: ["logo-4.png","logo-5.png","logo-1.png","logo-2.png","logo-3.png","logo-4.png"],
+      aboutLinks: [
+        {
+          name: "The Company",
+          link: "#"
+        },
+        {
+          name: "Institutional",
+          link: "#"
+        },
+        {
+          name: "Social & Events",
+          link: "#"
+        },
+        {
+          name: "Innovation",
+          link: "#"
+        },
+        {
+          name: "Environment",
+          link: "#"
+        },
+        {
+          name: "Technology",
+          link: "#"
+        },
+      ],
+      servicesLinks: [
+        {
+          name: "Audit & Assurance",
+          link: "#"
+        },
+        {
+          name: "Financial Advisory",
+          link: "#"
+        },
+        {
+          name: "Analytics M&A",
+          link: "#"
+        },
+        {
+          name: "Middle Marketing",
+          link: "#"
+        },
+        {
+          name: "Legal Consulting",
+          link: "#"
+        },
+        {
+          name: "Regulatory Risk",
+          link: "#"
+        },
+      ],
+      supportLinks: [
+        {
+          name: "Responsability",
+          link: "#"
+        },
+        {
+          name: "Term of Use",
+          link: "#"
+        },
+        {
+          name: "About",
+          link: "#"
+        },
+        {
+          name: "Privacy Policy",
+          link: "#"
+        },
+        {
+          name: "Accessibility",
+          link: "#"
+        },
+        {
+          name: "Information",
+          link: "#"
+        },
+      ]
     },
     methods: {
 

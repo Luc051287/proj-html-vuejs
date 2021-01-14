@@ -220,34 +220,19 @@
             <div class="footer_box">
               <ul>
                 <li class="list_title">About</li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>The Company</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Institutional</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Social & Events</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Innovation</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Environment</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Technology</a></li>
+                <li v-for="elem in aboutLinks"><a :href="elem.link"><i class="fas fa-chevron-right"></i>{{elem.name}}</a></li>
               </ul>
             </div>
             <div class="footer_box">
               <ul>
                 <li class="list_title">Services</li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Audit & Assurance</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Financial Advisory</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Analytics M&A</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Middle Marketing</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Legal Consulting</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Regulatory Risk</a></li>
+                <li v-for="elem in servicesLinks"><a :href="elem.link"><i class="fas fa-chevron-right"></i>{{elem.name}}</a></li>
               </ul>
             </div>
             <div class="footer_box">
               <ul>
                 <li class="list_title">Support</li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Responsability</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Term of Use</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>About Cookies</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Accessibility</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Information</a></li>
+                <li v-for="elem in supportLinks"><a :href="elem.link"><i class="fas fa-chevron-right"></i>{{elem.name}}</a></li>
               </ul>
             </div>
           </div>
