@@ -337,6 +337,7 @@
         }
         select {
           appearance: none;
+          outline: none;
           background: url("../img/chevron-down-solid.svg") 95% center no-repeat $greyNurse;
           background-size: auto 35%;
           border: none;

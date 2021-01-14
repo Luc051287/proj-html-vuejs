@@ -597,6 +597,7 @@ span.background {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  outline: none;
   background: url("../img/chevron-down-solid.svg") 95% center no-repeat #eef1ed;
   background-size: auto 35%;
   border: none;
