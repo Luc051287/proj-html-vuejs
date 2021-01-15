@@ -205,9 +205,9 @@ var app = new Vue(
         }
         section.scrollIntoView({ behavior: 'smooth'});
       },
-      changeVisible: function() {
+      changeVisible: function(type) {
         this.projects.forEach(el => {
-          if (el.types.includes(this.projectsTypes[this.indexProjectsMenu])) {
+          if (el.types.includes(type)) {
             el.visible = true;
           } else {
             el.visible = false;
