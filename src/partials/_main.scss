@@ -1,6 +1,33 @@
-// main {
-//   z-index: -1;
+.box-enter {
+  transform: scale(0.001);
+  // transition: transform 1s;
+}
+
+.box-leave-to {
+  transform: scale(0.001);
+}
+
+.box-enter-active {
+  transition: all 250ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.box-leave-active {
+  transition: all 250ms cubic-bezier(0.4,0,0.2,1);
+}
+
+// .box-move {
+//   transition: transform 1s;
 // }
+
+.box-leave {
+  transform: scale(1);
+}
+
+.box-enter-to {
+  transform: scale(1);
+  // transition: transform 1s;
+}
+
 
 #services {
   background-color: $greyNurse;

@@ -59,7 +59,7 @@ p.sub_par {
   line-height: 40px;
   font-size: 0.85em;
   padding: 0 18px;
-  transition: background-color 0.3s;
+  transition: background-color 0.4s;
 }
 .btn > a {
   color: #FFFFFF;
@@ -74,6 +74,7 @@ p.sub_par {
   color: #038484;
   border: 1px solid #038484;
   margin-left: 20px;
+  transition: all 0.4s;
 }
 .btn.second > a {
   color: #038484;
@@ -252,6 +253,30 @@ span.background {
   font-size: 1.2em;
   width: 90%;
   margin: 10px auto 40px;
+}
+
+.box-enter {
+  transform: scale(0.001);
+}
+
+.box-leave-to {
+  transform: scale(0.001);
+}
+
+.box-enter-active {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box-leave-active {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box-leave {
+  transform: scale(1);
+}
+
+.box-enter-to {
+  transform: scale(1);
 }
 
 #services {

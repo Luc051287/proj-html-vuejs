@@ -47,42 +47,54 @@ var app = new Vue(
           types: ["technology", "innovation", "social"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-1.jpg",
-          link: "#"
+          link: "#",
+          id: 0,
+          visible: true
         },
         {
           title: "President's speech at the annual meeting",
           types: ["institutional", "events", "environment"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-2.jpg",
-          link: "#"
+          link: "#",
+          id: 1,
+          visible: true
         },
         {
           title: "Iternational business trip Shangai",
           types: ["institutional", "social", "environment"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-3.jpg",
-          link: "#"
+          link: "#",
+          id: 2,
+          visible: true
         },
         {
           title: "Technology workshop with education theme",
           types: ["events", "innovation", "technology"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-4.jpg",
-          link: "#"
+          link: "#",
+          id: 3,
+          visible: true
         },
         {
           title: "Donation of clothes and food to the partner NGO",
           types: ["social", "events", "environment"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-5.jpg",
-          link: "#"
+          link: "#",
+          id: 4,
+          visible: true
         },
         {
           title: "Confraternization of the procurement team",
           types: ["institutional", "innovation", "technology"],
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-6.jpg",
-          link: "#"
+          link: "#",
+          id: 5,
+          visible: true
         }
       ],
       results: [
@@ -193,6 +205,16 @@ var app = new Vue(
         }
         section.scrollIntoView({ behavior: 'smooth'});
       },
+      changeVisible: function() {
+        this.projects.forEach(el => {
+          if (el.types.includes(this.projectsTypes[this.indexProjectsMenu])) {
+            el.visible = true;
+          } else {
+            el.visible = false;
+          }
+        });
+
+      }
     },
     computed: {
       filteredProjects: function() {

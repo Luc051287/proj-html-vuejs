@@ -127,24 +127,24 @@
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @mousedown="changeVisible()" @click="indexProjectsMenu = index">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">
-              <div id="projects_boxes">
-                <div v-for="(project, index) in filteredProjects" class="box">
-                  <img :src="'img/' + project.imgSrc" alt="">
+              <transition-group name="box" id="projects_boxes" tag="div">
+                <div v-for="(box, index) in projects" class="box" :key="box.id" v-if="box.visible == true">
+                  <img :src="'img/' + box.imgSrc" alt="">
                   <div class="box_description">
                     <div class="box_top">
-                      <a :href="project.link"><i class="fas fa-arrow-right"></i></a>
+                      <a :href="box.link"><i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="box_bottom">
-                      <h3>{{project.title}}</h3>
-                      <p class="sub_par">{{project.paragraph}}</p>
+                      <h3>{{box.title}}</h3>
+                      <p class="sub_par">{{box.paragraph}}</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </transition-group>
             </div>
           </div>
         </div>
