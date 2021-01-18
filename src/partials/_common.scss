@@ -16,7 +16,6 @@ a {
   &:hover {
     color: $blueLagoon;
   }
-  // cursor: pointer;
 }
 
 p {
@@ -90,6 +89,7 @@ p.sub_par {
 span {
   color: $bigstone;
 }
+
 span.background {
   @include spanBackground($blueLagoon, $backGroundWordGray);
   padding: 0 10px;
@@ -134,4 +134,12 @@ span.background {
 .active_li {
   background-color: $backGroundWordGray;
   border-radius: 5px;
+}
+
+.opaYes {
+  opacity: 1;
+}
+
+.opaNo {
+  opacity: 0;
 }

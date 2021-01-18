@@ -2,7 +2,12 @@ var app = new Vue(
   {
     el:"#root",
     data: {
+      topBtn: "opaNo",
+      index: 0,
+      resultsAnim: '',
+      isStarted: false,
       indexProjectsMenu: 0,
+      duration: 0.00001,
       active_li: "active_li",
       mainLogo: "logo.png",
       projectsTypes: ["all","institutional", "social", "events", "innovation", "environment", "technology"],
@@ -100,19 +105,75 @@ var app = new Vue(
       results: [
         {
           target: "Certifications",
-          count: 128
+          countStart: 0,
+          count: 128,
+          multiplier: 0.001,
+          duration: 1,
+          timer: function() {
+            this.multiplier += 0.0218;
+            this.duration = this.multiplier * this.duration;
+            const interval = setInterval( () => {
+              this.countStart += 1;
+              clearInterval(interval);
+              if (this.countStart < this.count) {
+                this.timer();
+              }
+            }, this.duration);
+          }
         },
         {
           target: "Employees",
-          count: 230
+          countStart: 0,
+          count: 230,
+          multiplier: 0.001,
+          duration: 1,
+          timer: function() {
+            this.multiplier += 0.01198;
+            this.duration = this.multiplier * this.duration;
+            const interval = setInterval( () => {
+              this.countStart += 1;
+              clearInterval(interval);
+              if (this.countStart < this.count) {
+                this.timer();
+              }
+            }, this.duration);
+          }
         },
         {
           target: "Customers",
-          count: 517
+          countStart: 0,
+          count: 517,
+          multiplier: 0.001,
+          duration: 1,
+          timer: function() {
+            this.multiplier += 0.00527;
+            this.duration = this.multiplier * this.duration;
+            const interval = setInterval( () => {
+              this.countStart += 1;
+              clearInterval(interval);
+              if (this.countStart < this.count) {
+                this.timer();
+              }
+            }, this.duration);
+          }
         },
         {
           target: "Countries Served",
-          count: 94
+          countStart: 0,
+          count: 94,
+          multiplier: 0.001,
+          duration: 1,
+          timer: function() {
+            this.multiplier += 0.0301;
+            this.duration = this.multiplier * this.duration;
+            const interval = setInterval( () => {
+              this.countStart += 1;
+              clearInterval(interval);
+              if (this.countStart < this.count) {
+                this.timer();
+              }
+            }, this.duration);
+          }
         }
       ],
       partnersLogo: ["logo-4.png","logo-5.png","logo-1.png","logo-2.png","logo-3.png","logo-4.png"],
@@ -199,21 +260,41 @@ var app = new Vue(
       scroll: function(key) {
         let section;
         if (key == "home") {
-          section = document.getElementById("header_bottom");
+          section = document.getElementById("header_top");
         } else {
           section = document.getElementById(key);
         }
         section.scrollIntoView({ behavior: 'smooth'});
       },
-      changeVisible: function(type) {
-        this.projects.forEach(el => {
-          if (el.types.includes(type)) {
-            el.visible = true;
+      scrollToTop: function() {
+        let section = document.getElementById("header_top");
+        section.scrollIntoView({ behavior: 'smooth'});
+      },
+      scrollResults: function() {
+        window.onscroll = (e) => {
+          let bottom = window.innerHeight + window.scrollY;
+          if (window.oldScroll > window.scrollY) {
+            this.topBtn = 'opaYes';
+            setTimeout( () => this.topBtn = 'opaNo' ,1500)
           } else {
-            el.visible = false;
+            this.topBtn = 'opaNo';
           }
-        });
-
+          window.oldScroll = window.scrollY;
+          if (window.scrollY == 0) {
+            this.topBtn = 'opaNo';
+          } else if (bottom == document.documentElement.offsetHeight) {
+            this.topBtn = 'opaYes';
+          }
+          let myDiv = document.getElementById("numbers_boxes");
+          var rect = myDiv.getBoundingClientRect();
+          if ((rect.top + myDiv.offsetHeight) <= window.innerHeight && this.isStarted == false) {
+            this.resultsAnim = 'results_anim';
+            this.results.forEach((item, i) => {
+              item.timer();
+            });
+            this.isStarted = true;
+          }
+        }
       }
     },
     computed: {
@@ -224,6 +305,12 @@ var app = new Vue(
           return this.projects.filter(elem => elem.types.includes(this.projectsTypes[this.indexProjectsMenu]));
         }
       }
+    },
+    mounted: function() {
+      window.addEventListener('scroll', this.scrollResults);
+    },
+    destroyed: function() {
+      window.removeEventListener('scroll', this.scrollResults);
     }
   }
 );

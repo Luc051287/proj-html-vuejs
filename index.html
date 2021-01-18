@@ -52,8 +52,8 @@
               <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
             </div>
             <div class="jumbo_select">
-              <span class="j_active"></span>
               <span></span>
+              <span class="j_active"></span>
               <span></span>
             </div>
           </div>
@@ -127,12 +127,12 @@
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @mousedown="changeVisible(type)" @mouseup="indexProjectsMenu = index">{{type}}</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">
-              <div name="box" id="projects_boxes">
-                <div v-for="(box, index) in projects" class="box" :key="box.id" v-if="box.visible == true">
+              <transition-group name="box" id="projects_boxes" tag="div">
+                <div v-for="(box, index) in filteredProjects" class="box" :key="box.title">
                   <img :src="'img/' + box.imgSrc" alt="">
                   <div class="box_description">
                     <div class="box_top">
@@ -144,7 +144,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </transition-group>
             </div>
           </div>
         </div>
@@ -153,9 +153,9 @@
           <div id="results_container" class="container">
             <p class="margin_bottom main_par" >what are we doing</p>
             <h2 class="margin_bottom main_titles"> <span class="background">Results</span> <span>in Numbers</span> </h2>
-            <div class="numbers_boxes">
+            <div id="numbers_boxes" :class="resultsAnim">
               <div v-for="value in results" class="box">
-                <p>{{value.count}}</p>
+                <p>{{value.countStart}}</p>
                 <h3>{{value.target}}</h3>
               </div>
             </div>
@@ -203,9 +203,7 @@
             </div>
           </div>
         </div>
-
       </main>
-
       <footer>
         <div id="footer_top">
           <div id="footer_top_container" class="container">
@@ -242,10 +240,9 @@
             <p>Enjoy the low price.We are tracking any intention of piracy.</p>
             <p><i class="far fa-copyright"></i> 2020 NEXTGEN is Powered by <a href="#">Codings</a> </p>
           </div>
-          <i class="fas fa-arrow-up"></i>
+          <i class="fas fa-arrow-up" :class="topBtn" @click="scrollToTop()"></i>
         </div>
       </footer>
-
     </div>
     <script src="js/script.js" charset="utf-8"></script>
   </body>

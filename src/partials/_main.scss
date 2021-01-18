@@ -28,7 +28,6 @@
   // transition: transform 1s;
 }
 
-
 #services {
   background-color: $greyNurse;
   width: 100%;
@@ -62,7 +61,16 @@
     @include flex;
     flex-direction: column;
     justify-content: space-between;
-
+    transition: all 0.4s ease-out;
+    &:hover {
+      transform: translateY(-7.5px);
+    }
+    &:hover a > i {
+      color: $smaltBlue;
+    }
+    &:hover a > i::after {
+      animation: pulse 1.5s infinite;
+    }
     &_top {
       @include flex;
       justify-content: space-between;
@@ -72,18 +80,37 @@
         color: $blueLagoon;
       }
       a > i {
+        text-align: center;
         font-size: 1.4em;
         color: $fountainBlue;
+        position: relative;
         cursor: pointer;
+        width: 27px;
+        height: 27px;
         padding: 4px;
-        border-radius: 50%;
-        &:hover {
-          color: $smaltBlue;
+        transition: all 0.4s ease-out;
+        &::after {
+          content: "";
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
           background-color: $fountainBlue;
         }
       }
     }
   }
+}
+
+@keyframes pulse {
+  0% {opacity: 0; width: 100%; height: 100%;}
+  1% {opacity: 1; width: 100%; height: 100%;}
+  100% {opacity: 0; width: 170%; height: 170%;}
 }
 
 #about {
@@ -204,10 +231,20 @@
         top: 0;
         width: 100%;
         height: 100%;
+        transition: all 0.2s ease-out;
       }
       &:hover > img {
         @include boxHover;
       }
+
+      &:hover .box_description .box_bottom {
+        transform: translateY(-15px);
+      }
+
+      &:hover .box_description p.sub_par {
+        opacity: 1
+      }
+
       .box_description {
         position: absolute;
         @include flex;
@@ -220,7 +257,7 @@
         left: 0;
         background-color: rgba(0,0,0,0.5);
         text-align: center;
-        padding: 30px 0;
+        padding: 30px 5px;
 
         &:hover {
           background-color: rgba(0,0,0,0.7);
@@ -233,8 +270,14 @@
           i {
             font-size: 1.5em;
             cursor: pointer;
-            display: none;
+            opacity: 0;
+            color: $colorWhite;
+            transition: all 0.4s ease-out;
           }
+        }
+        .box_bottom {
+          transform: translateY(40px);
+          transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1);
         }
 
         h3 {
@@ -246,12 +289,13 @@
           width: 70%;
           margin: 0 auto;
           margin-top: 10px;
-          display: none;
+          line-height: 20px;
+          opacity: 0;
+          transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1);
         }
 
-        &:hover p, &:hover i {
-          display: block;
-          color: $colorWhite;
+        &:hover i {
+          opacity: 1;
         }
       }
     }
@@ -282,10 +326,17 @@
     margin-right: 5px;
   }
 
-  .numbers_boxes {
+  #numbers_boxes {
     @include flex;
     justify-content: space-between;
     margin-top: 90px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.5s;
+    &.results_anim {
+      transform: translateY(0);
+      opacity: 1;
+    }
     .box {
       h3 {
         font-size: 1.6em;
