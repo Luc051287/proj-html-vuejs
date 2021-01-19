@@ -392,6 +392,15 @@ span.background {
   background-color: #111117;
   position: relative;
 }
+#about #right_up_container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s;
+}
+#about #right_up_container.results_anim {
+  transform: translateY(0);
+  opacity: 1;
+}
 #about .btn {
   font-size: 1em;
   height: 42px;
@@ -568,6 +577,7 @@ span.background {
   background-image: url("../img/bg-7.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

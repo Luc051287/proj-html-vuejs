@@ -87,7 +87,7 @@
           <img src="" alt="">
           <div class="company left">
             <div id="right_item">
-              <div class="right_up_container">
+              <div id="right_up_container" :class="companyAnim">
                 <p class="margin_bottom main_par" >about the network</p>
                 <h2 class="margin_bottom main_titles"> <span class="background">The</span> <span>Company</span> </h2>
                 <p class="sub_par">For 12 years we have been providing audit and warranty, financial advice, risk advice, taxes and related services to select clients.</p>
@@ -127,7 +127,7 @@
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="[indexProjectsMenu = index]">{{type}}</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">

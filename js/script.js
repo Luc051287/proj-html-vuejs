@@ -5,7 +5,9 @@ var app = new Vue(
       items: [1,2,3,4,5,6,7,8,9],
       topBtn: "opaNo",
       resultsAnim: '',
+      companyAnim: '',
       isStarted: false,
+      isStartedCompany: false,
       indexProjectsMenu: 0,
       duration: 0.00001,
       active_li: "active_li",
@@ -103,17 +105,21 @@ var app = new Vue(
         }
       ],
       results: [
-        { // cambiare la funziojna che gestisce i tempi e provare a metterne una sola
+        {
           target: "Certifications",
           countStart: 0,
           count: 128,
-          multiplier: 0.001,
+          multiplier: 0,
           duration: 1,
           timer: function() {
-            this.multiplier += 0.0218;
-            this.duration = this.multiplier * this.duration;
+            if (this.multiplier > this.count - 3) {
+              this.duration = 300;
+            } else {
+              this.duration = (4500/this.count);
+            }
             const interval = setInterval( () => {
               this.countStart += 1;
+              this.multiplier += 1;
               clearInterval(interval);
               if (this.countStart < this.count) {
                 this.timer();
@@ -125,13 +131,17 @@ var app = new Vue(
           target: "Employees",
           countStart: 0,
           count: 230,
-          multiplier: 0.001,
+          multiplier: 0,
           duration: 1,
           timer: function() {
-            this.multiplier += 0.01198;
-            this.duration = this.multiplier * this.duration;
+            if (this.multiplier > this.count - 3) {
+              this.duration = 300;
+            } else {
+              this.duration = (4500/this.count);
+            }
             const interval = setInterval( () => {
               this.countStart += 1;
+              this.multiplier += 1;
               clearInterval(interval);
               if (this.countStart < this.count) {
                 this.timer();
@@ -143,13 +153,18 @@ var app = new Vue(
           target: "Customers",
           countStart: 0,
           count: 517,
-          multiplier: 0.001,
+          multiplier: 0,
           duration: 1,
           timer: function() {
-            this.multiplier += 0.00527;
-            this.duration = this.multiplier * this.duration;
+            if (this.multiplier > this.count - 3) {
+              this.duration = 300;
+            } else {
+              // non ce la fa a stare dietro agli altri, bisogna dargli un tempo più basso
+              this.duration = (4000/this.count);
+            }
             const interval = setInterval( () => {
               this.countStart += 1;
+              this.multiplier += 1;
               clearInterval(interval);
               if (this.countStart < this.count) {
                 this.timer();
@@ -161,13 +176,17 @@ var app = new Vue(
           target: "Countries Served",
           countStart: 0,
           count: 94,
-          multiplier: 0.001,
+          multiplier: 0,
           duration: 1,
           timer: function() {
-            this.multiplier += 0.0301;
-            this.duration = this.multiplier * this.duration;
+            if (this.multiplier > this.count - 3) {
+              this.duration = 300;
+            } else {
+              this.duration = (4500/this.count);
+            }
             const interval = setInterval( () => {
               this.countStart += 1;
+              this.multiplier += 1;
               clearInterval(interval);
               if (this.countStart < this.count) {
                 this.timer();
@@ -257,9 +276,6 @@ var app = new Vue(
       ]
     },
     methods: {
-      prova: function() {
-        this.projects.splice(0, 1);
-      },
       scroll: function(key) {
         let section;
         if (key == "home") {
@@ -267,6 +283,7 @@ var app = new Vue(
         } else {
           section = document.getElementById(key);
         }
+        // safari non supporta questo comando
         section.scrollIntoView({ behavior: 'smooth'});
       },
       scrollToTop: function() {
@@ -288,9 +305,15 @@ var app = new Vue(
           } else if (bottom == document.documentElement.offsetHeight) {
             this.topBtn = 'opaYes';
           }
-          let myDiv = document.getElementById("numbers_boxes");
-          var rect = myDiv.getBoundingClientRect();
-          if ((rect.top + myDiv.offsetHeight) <= window.innerHeight && this.isStarted == false) {
+          let numbersDiv = document.getElementById("numbers_boxes");
+          let rectNumbers = numbersDiv.getBoundingClientRect();
+          let companyUp = document.getElementById("right_up_container");
+          let rectcompanyUp = companyUp.getBoundingClientRect();
+          if (rectcompanyUp.top <= window.innerHeight && this.isStarted == false) {
+            this.companyAnim = 'results_anim';
+            this.isStartedCompany = true;
+          }
+          if ((rectNumbers.top + numbersDiv.offsetHeight) <= window.innerHeight && this.isStarted == false) {
             this.resultsAnim = 'results_anim';
             this.results.forEach((item, i) => {
               item.timer();

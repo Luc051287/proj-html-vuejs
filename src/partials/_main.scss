@@ -89,6 +89,15 @@
   height: 750px;
   background-color: $woodSmoke;
   position: relative;
+  #right_up_container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s;
+    &.results_anim {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
   .btn {
     font-size: 1em;
     height: 42px;
@@ -275,6 +284,7 @@
   background-image: url($chess);
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   @include backgroundSize(cover);
 }
 
@@ -433,7 +443,7 @@
   }
 }
 
-// non capisco perché scritto cosi funge
+// va scritto cosi tutto insieme altrimenti non va!
 .box-item {
   overflow: hidden;
   border-radius: 10px;
