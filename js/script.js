@@ -8,9 +8,9 @@ var app = new Vue(
       companyAnim: '',
       coboxesAnim: '',
       buttonsAnim: '',
+      self: this.$el,
       isStarted: false,
       indexProjectsMenu: 0,
-      duration: 0.00001,
       active_li: "active_li",
       mainLogo: "logo.png",
       projectsTypes: ["all","institutional", "social", "events", "innovation", "environment", "technology"],
@@ -291,6 +291,11 @@ var app = new Vue(
         let section = document.getElementById("header_top");
         section.scrollIntoView({ behavior: 'smooth'});
       },
+      createElem: function(id) {
+        let elem = document.getElementById(id);
+        let rect = elem.getBoundingClientRect();
+        return [elem, rect]
+      },
       scrollResults: function() {
         window.onscroll = (e) => {
           let bottom = window.innerHeight + window.scrollY;
@@ -301,34 +306,29 @@ var app = new Vue(
             this.topBtn = 'opaNo';
           }
           window.oldScroll = window.scrollY;
-          
+
           if (window.scrollY == 0) {
             this.topBtn = 'opaNo';
           } else if (bottom == document.documentElement.offsetHeight) {
             this.topBtn = 'opaYes';
           }
 
-          let numbersDiv = document.getElementById("numbers_boxes");
-          let rectNumbers = numbersDiv.getBoundingClientRect();
-          let companyUp = document.getElementById("right_up_container");
-          let rectcompanyUp = companyUp.getBoundingClientRect();
-          let companyBoxes = document.getElementById("company_boxes");
-          let rectcompanyBoxes = companyBoxes.getBoundingClientRect();
-          let buttonsCont = document.getElementById("button_container");
-          let rectbuttonsCont = buttonsCont.getBoundingClientRect();
+          const numbersDiv = this.createElem("numbers_boxes");
+          const companyUp = this.createElem("right_up_container");
+          const companyBoxes = this.createElem("company_boxes");
+          const buttonsCont = this.createElem("button_container");
 
-
-          if (rectcompanyUp.top <= window.innerHeight) {
+          if (companyUp[1].top <= window.innerHeight) {
             this.companyAnim = 'results_anim';
           }
-          if (rectcompanyBoxes.top <= window.innerHeight) {
+          if (companyBoxes[1].top <= window.innerHeight) {
             this.coboxesAnim = 'results_anim';
           }
-          if (rectbuttonsCont.top <= window.innerHeight) {
+          if (buttonsCont[1].top <= window.innerHeight) {
             this.buttonsAnim = 'results_anim';
           }
 
-          if ((rectNumbers.top + numbersDiv.offsetHeight) <= window.innerHeight && this.isStarted == false) {
+          if ((numbersDiv[1].top + numbersDiv[0].offsetHeight) <= window.innerHeight && this.isStarted == false) {
             this.resultsAnim = 'results_anim';
             this.results.forEach((item, i) => {
               item.timer();

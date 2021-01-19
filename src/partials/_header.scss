@@ -65,7 +65,7 @@
 #header_bottom {
   width: 100%;
   // height: 730px;
-  height: 590px;
+  height: 665px;
   background-color: white;
 
   .jumbotron {
@@ -125,6 +125,30 @@
       font-size: 1.2em;
       width: 90%;
       margin: 10px auto 40px;
+    }
+  }
+}
+
+// MEDIA QUERY
+
+@media(max-width: 1200px) {
+  #header_bottom {
+    height: 512px;
+    .jumbotron {
+      & > img {
+        transform: scale(2.1);
+      }
+    }
+  }
+}
+
+@media(max-width: 1430px) {
+  #header_bottom {
+    height: 570px;
+    .jumbotron {
+      & > img {
+        transform: scale(1.94);
+      }
     }
   }
 }
