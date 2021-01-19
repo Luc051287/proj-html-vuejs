@@ -208,7 +208,7 @@ span.background {
 
 #header_bottom {
   width: 100%;
-  height: 665px;
+  height: 680px;
   background-color: white;
 }
 #header_bottom .jumbotron {
@@ -219,7 +219,7 @@ span.background {
 }
 #header_bottom .jumbotron > img {
   position: absolute;
-  bottom: 90px;
+  bottom: 116px;
   width: 100%;
   transform: scale(1.94);
 }
@@ -268,20 +268,20 @@ span.background {
   margin: 10px auto 40px;
 }
 
-@media (max-width: 1200px) {
-  #header_bottom {
-    height: 512px;
-  }
-  #header_bottom .jumbotron > img {
-    transform: scale(2.1);
-  }
-}
 @media (max-width: 1430px) {
   #header_bottom {
-    height: 570px;
+    height: 596px;
   }
   #header_bottom .jumbotron > img {
     transform: scale(1.94);
+  }
+}
+@media (max-width: 1200px) {
+  #header_bottom {
+    height: 538px;
+  }
+  #header_bottom .jumbotron > img {
+    transform: scale(2.1);
   }
 }
 #services {
