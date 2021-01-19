@@ -2,8 +2,8 @@ var app = new Vue(
   {
     el:"#root",
     data: {
+      items: [1,2,3,4,5,6,7,8,9],
       topBtn: "opaNo",
-      index: 0,
       resultsAnim: '',
       isStarted: false,
       indexProjectsMenu: 0,
@@ -53,7 +53,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-1.jpg",
           link: "#",
-          id: 0,
+          id: 1,
           visible: true
         },
         {
@@ -62,7 +62,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-2.jpg",
           link: "#",
-          id: 1,
+          id: 2,
           visible: true
         },
         {
@@ -71,7 +71,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-3.jpg",
           link: "#",
-          id: 2,
+          id: 3,
           visible: true
         },
         {
@@ -80,7 +80,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-4.jpg",
           link: "#",
-          id: 3,
+          id: 4,
           visible: true
         },
         {
@@ -89,7 +89,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-5.jpg",
           link: "#",
-          id: 4,
+          id: 5,
           visible: true
         },
         {
@@ -98,12 +98,12 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-6.jpg",
           link: "#",
-          id: 5,
+          id: 6,
           visible: true
         }
       ],
       results: [
-        {
+        { // cambiare la funziojna che gestisce i tempi e provare a metterne una sola
           target: "Certifications",
           countStart: 0,
           count: 128,
@@ -257,6 +257,9 @@ var app = new Vue(
       ]
     },
     methods: {
+      prova: function() {
+        this.projects.splice(0, 1);
+      },
       scroll: function(key) {
         let section;
         if (key == "home") {

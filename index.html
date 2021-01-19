@@ -127,23 +127,24 @@
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="[indexProjectsMenu = index]">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">
               <transition-group name="box" id="projects_boxes" tag="div">
-                <div v-for="(box, index) in filteredProjects" class="box" :key="box.title">
-                  <img :src="'img/' + box.imgSrc" alt="">
+                <span v-for="(item, index) in filteredProjects" class="box-item" :key="item.id">
+                  <img :src="'img/' + item.imgSrc" alt="">
                   <div class="box_description">
                     <div class="box_top">
-                      <a :href="box.link"><i class="fas fa-arrow-right"></i></a>
+                      <a :href="item.link"><i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="box_bottom">
-                      <h3>{{box.title}}</h3>
-                      <p class="sub_par">{{box.paragraph}}</p>
+                      <h3>{{item.title}}</h3>
+                      <p class="sub_par">{{item.paragraph}}</p>
                     </div>
                   </div>
-                </div>
+                </span>
+                <!-- <span v-for="item in items" :key="item" class="list-complete-item"> {{ item }} </span> -->
               </transition-group>
             </div>
           </div>

@@ -117,17 +117,19 @@ span.background {
 .navbar_h li {
   display: inline-block;
   text-transform: uppercase;
-  margin: 0px 6px;
   color: #1d2023;
   cursor: pointer;
   font-weight: 300;
   line-height: 35px;
-  padding: 1px 10px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
 }
 .navbar_h li > a {
   color: #1d2023;
+}
+.navbar_h li:not(:last-child) {
+  margin: 0px 6px;
+  padding: 1px 10px;
 }
 .navbar_h .btn {
   font-size: 1em;
@@ -264,30 +266,6 @@ span.background {
   font-size: 1.2em;
   width: 90%;
   margin: 10px auto 40px;
-}
-
-.box-enter {
-  transform: scale(0.001);
-}
-
-.box-leave-to {
-  transform: scale(0.001);
-}
-
-.box-enter-active {
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.box-leave-active {
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.box-leave {
-  transform: scale(1);
-}
-
-.box-enter-to {
-  transform: scale(1);
 }
 
 #services {
@@ -509,38 +487,31 @@ span.background {
 #projects .up_container {
   text-align: center;
 }
-#projects #projects_boxes {
+#projects_boxes {
   display: flex;
   display: -ms-flexbox;
   flex-wrap: wrap;
+  position: relative;
   justify-content: space-between;
 }
-#projects #projects_boxes .box {
-  position: relative;
-  width: calc(100%/3 - 20px);
-  height: 315px;
-  border-radius: 10px;
-  margin: 10px 0;
-  overflow: hidden;
-}
-#projects #projects_boxes .box > img {
+#projects_boxes .box-item > img {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   transition: all 0.2s ease-out;
 }
-#projects #projects_boxes .box:hover > img {
+#projects_boxes .box-item:hover > img {
   transform: scale(1.1);
   filter: blur(1px);
 }
-#projects #projects_boxes .box:hover .box_description .box_bottom {
+#projects_boxes .box-item:hover .box_description .box_bottom {
   transform: translateY(-15px);
 }
-#projects #projects_boxes .box:hover .box_description p.sub_par {
+#projects_boxes .box-item:hover .box_description p.sub_par {
   opacity: 1;
 }
-#projects #projects_boxes .box .box_description {
+#projects_boxes .box-item .box_description {
   position: absolute;
   display: flex;
   display: -ms-flexbox;
@@ -555,30 +526,30 @@ span.background {
   text-align: center;
   padding: 30px 5px;
 }
-#projects #projects_boxes .box .box_description:hover {
+#projects_boxes .box-item .box_description:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-#projects #projects_boxes .box .box_description .box_top {
+#projects_boxes .box-item .box_description .box_top {
   display: flex;
   display: -ms-flexbox;
   justify-content: flex-end;
   padding: 0 30px;
 }
-#projects #projects_boxes .box .box_description .box_top i {
+#projects_boxes .box-item .box_description .box_top i {
   font-size: 1.5em;
   cursor: pointer;
   opacity: 0;
   color: #FFFFFF;
   transition: all 0.4s ease-out;
 }
-#projects #projects_boxes .box .box_description .box_bottom {
+#projects_boxes .box-item .box_description .box_bottom {
   transform: translateY(40px);
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-#projects #projects_boxes .box .box_description h3 {
+#projects_boxes .box-item .box_description h3 {
   font-size: 1.5em;
 }
-#projects #projects_boxes .box .box_description p.sub_par {
+#projects_boxes .box-item .box_description p.sub_par {
   color: #FFFFFF;
   width: 70%;
   margin: 0 auto;
@@ -587,7 +558,7 @@ span.background {
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-#projects #projects_boxes .box .box_description:hover i {
+#projects_boxes .box-item .box_description:hover i {
   opacity: 1;
 }
 
@@ -765,6 +736,25 @@ span.background {
   color: #038484;
   background-color: #eef1ed;
   text-align: center;
+}
+
+.box-item {
+  overflow: hidden;
+  border-radius: 10px;
+  width: calc(100%/3 - 20px);
+  height: 315px;
+  position: relative;
+  transition: all 1s;
+  margin: 10px 0;
+}
+
+.box-enter, .box-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.box-leave-active {
+  position: absolute;
 }
 
 #footer_top {

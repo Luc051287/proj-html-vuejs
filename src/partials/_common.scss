@@ -114,17 +114,19 @@ span.background {
   li {
     display: inline-block;
     text-transform: uppercase;
-    margin: 0px 6px;
     color: #1d2023;
     cursor: pointer;
     font-weight: 300;
     line-height: 35px;
-    padding: 1px 10px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     & > a {
       color: #1d2023;
     }
+  }
+  li:not(:last-child) {
+    margin: 0px 6px;
+    padding: 1px 10px;
   }
   .btn {
     font-size: 1.0em;
