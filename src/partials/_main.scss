@@ -440,14 +440,19 @@
   width: calc(100%/3 - 20px);
   height: 315px;
   position: relative;
-  transition: all 1s;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin: 10px 0;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .box-enter, .box-leave-to {
+  transform: scale(0);
   opacity: 0;
-  transform: translateY(30px);
 }
+
 .box-leave-active {
+  transform: translateY(0px);
+  transition: all 50ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
 }
