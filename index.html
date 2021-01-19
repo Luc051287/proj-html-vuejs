@@ -92,7 +92,7 @@
                 <h2 class="margin_bottom main_titles"> <span class="background">The</span> <span>Company</span> </h2>
                 <p class="sub_par">For 12 years we have been providing audit and warranty, financial advice, risk advice, taxes and related services to select clients.</p>
               </div>
-              <div id="company_boxes">
+              <div id="company_boxes" :class="coboxesAnim">
                 <div class="box">
                   <h3 class="margin_bottom"><i class="fas fa-medal"></i> Tradition</h3>
                   <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
@@ -110,7 +110,7 @@
                   <p class="sub_par">Lorem ipsum dolor sit amet consectetur adisciping elit.</p>
                 </div>
               </div>
-              <div class="button_container">
+              <div id="button_container" :class="buttonsAnim">
                 <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
                 <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
               </div>

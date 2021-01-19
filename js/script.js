@@ -6,8 +6,9 @@ var app = new Vue(
       topBtn: "opaNo",
       resultsAnim: '',
       companyAnim: '',
+      coboxesAnim: '',
+      buttonsAnim: '',
       isStarted: false,
-      isStartedCompany: false,
       indexProjectsMenu: 0,
       duration: 0.00001,
       active_li: "active_li",
@@ -300,19 +301,33 @@ var app = new Vue(
             this.topBtn = 'opaNo';
           }
           window.oldScroll = window.scrollY;
+          
           if (window.scrollY == 0) {
             this.topBtn = 'opaNo';
           } else if (bottom == document.documentElement.offsetHeight) {
             this.topBtn = 'opaYes';
           }
+
           let numbersDiv = document.getElementById("numbers_boxes");
           let rectNumbers = numbersDiv.getBoundingClientRect();
           let companyUp = document.getElementById("right_up_container");
           let rectcompanyUp = companyUp.getBoundingClientRect();
-          if (rectcompanyUp.top <= window.innerHeight && this.isStarted == false) {
+          let companyBoxes = document.getElementById("company_boxes");
+          let rectcompanyBoxes = companyBoxes.getBoundingClientRect();
+          let buttonsCont = document.getElementById("button_container");
+          let rectbuttonsCont = buttonsCont.getBoundingClientRect();
+
+
+          if (rectcompanyUp.top <= window.innerHeight) {
             this.companyAnim = 'results_anim';
-            this.isStartedCompany = true;
           }
+          if (rectcompanyBoxes.top <= window.innerHeight) {
+            this.coboxesAnim = 'results_anim';
+          }
+          if (rectbuttonsCont.top <= window.innerHeight) {
+            this.buttonsAnim = 'results_anim';
+          }
+
           if ((rectNumbers.top + numbersDiv.offsetHeight) <= window.innerHeight && this.isStarted == false) {
             this.resultsAnim = 'results_anim';
             this.results.forEach((item, i) => {

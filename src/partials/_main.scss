@@ -173,7 +173,13 @@
   #company_boxes {
     @include flex;
     flex-wrap: wrap;
-
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s;
+    &.results_anim {
+      transform: translateY(0);
+      opacity: 1;
+    }
     .box {
       width: calc(100%/2);
       margin-bottom: 30px;
@@ -181,6 +187,16 @@
         color: $fountainBlue;
         margin-right: 5px;
       }
+    }
+  }
+
+  #button_container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s;
+    &.results_anim {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }

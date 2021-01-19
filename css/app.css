@@ -479,6 +479,13 @@ span.background {
   display: flex;
   display: -ms-flexbox;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s;
+}
+#about #company_boxes.results_anim {
+  transform: translateY(0);
+  opacity: 1;
 }
 #about #company_boxes .box {
   width: calc(100%/2);
@@ -487,6 +494,15 @@ span.background {
 #about #company_boxes .box i {
   color: #52bbba;
   margin-right: 5px;
+}
+#about #button_container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s;
+}
+#about #button_container.results_anim {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 #actions_projects_container {
