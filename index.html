@@ -43,17 +43,25 @@
       </nav>
       <header>
         <div id="header_bottom">
-          <div class="jumbotron">
+          <div class="jumbotron" :class="carousel_dir">
             <img src="img/bg-parallax.png" alt="">
             <div id="jumbotron_center">
-              <h1> <span>Ready</span> <span class="background">Team</span> </h1>
-              <p>No matter what your company needs, we will be ready to assist you in the best possible way</p>
-              <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
-              <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
+              <transition name="appear-title">
+                <h1 v-if="show"> <span>Ready</span> <span class="background">Team</span> </h1>
+              </transition>
+              <transition name="appear-par">
+                <p v-if="show">No matter what your company needs, we will be ready to assist you in the best possible way</p>
+              </transition>
+              <transition name="appear-btn">
+                <div v-if="show" class="btn_transition">
+                  <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
+                  <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
+                </div>
+              </transition>
             </div>
-            <div id="jumbo_select">
-              <span v-for="n in 3" :class="(n == j_index) ? j_active : ''" @click="j_index = n"></span>
-            </div>
+          </div>
+          <div id="jumbo_select">
+            <span v-for="n in 3" :class="(n == j_index) ? j_active : ''" @click="[j_index = n, carousel(n)]"></span>
           </div>
         </div>
       </header>

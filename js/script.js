@@ -2,8 +2,10 @@ var app = new Vue(
   {
     el:"#root",
     data: {
+      show: false,
       j_active: 'j_active',
       j_index: 2,
+      carousel_dir: '',
       topBtn: "opaNo",
       resultsAnim: '',
       companyAnim: '',
@@ -281,15 +283,18 @@ var app = new Vue(
         // safari non supporta questo comando
         section.scrollIntoView({ behavior: 'smooth'});
       },
+
       scrollToTop: function() {
         let section = document.getElementById("header_top");
         section.scrollIntoView({ behavior: 'smooth'});
       },
+
       createElem: function(id) {
         let elem = document.getElementById(id);
         let rect = elem.getBoundingClientRect();
         return [elem, rect]
       },
+
       scrollResults: function() {
         window.onscroll = (e) => {
           let bottom = window.innerHeight + window.scrollY;
@@ -330,6 +335,26 @@ var app = new Vue(
             this.isStarted = true;
           }
         }
+      },
+
+      carousel: function(n) {
+        switch (n) {
+          case 1:
+            this.show = false;
+            this.carousel_dir = 'carousel_right';
+            setTimeout(() => this.show = true ,0)
+            break;
+          case 2:
+            this.show = false;
+            this.carousel_dir = 'carousel_center';
+            setTimeout(() => this.show = true ,0)
+            break;
+          case 3:
+            this.show = false;
+            this.carousel_dir = 'carousel_left';
+            setTimeout(() => this.show = true ,0)
+            break;
+        }
       }
     },
     computed: {
@@ -343,6 +368,7 @@ var app = new Vue(
     },
     mounted: function() {
       window.addEventListener('scroll', this.scrollResults);
+      this.show = true;
     },
     destroyed: function() {
       window.removeEventListener('scroll', this.scrollResults);

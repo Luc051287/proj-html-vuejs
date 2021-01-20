@@ -209,26 +209,16 @@ span.background {
 #header_bottom {
   width: 100%;
   height: 680px;
-  background-color: white;
-}
-#header_bottom .jumbotron {
-  width: 100%;
-  height: 100%;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
-#header_bottom .jumbotron > img {
+#header_bottom #jumbo_select {
   position: absolute;
-  bottom: 116px;
-  width: 100%;
-  transform: scale(1.94);
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 }
-#header_bottom .jumbotron #jumbo_select {
-  position: absolute;
-  top: 45%;
-  left: 95%;
-}
-#header_bottom .jumbotron #jumbo_select > span {
+#header_bottom #jumbo_select > span {
   display: block;
   cursor: pointer;
   width: 8px;
@@ -238,8 +228,29 @@ span.background {
   border-radius: 5px;
   border: 1px solid #038484;
 }
-#header_bottom .jumbotron #jumbo_select > span.j_active {
+#header_bottom #jumbo_select > span.j_active {
   background-color: #038484;
+}
+#header_bottom .jumbotron {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#header_bottom .jumbotron.carousel_right {
+  transform: translateX(800px);
+}
+#header_bottom .jumbotron.carousel_center {
+  transform: translateX(0);
+}
+#header_bottom .jumbotron.carousel_left {
+  transform: translateX(-800px);
+}
+#header_bottom .jumbotron > img {
+  position: absolute;
+  bottom: 116px;
+  width: 100%;
+  transform: scale(1.94);
 }
 #header_bottom #jumbotron_center {
   background-color: transparent;
@@ -284,6 +295,31 @@ span.background {
     transform: scale(2.1);
   }
 }
+.appear-title-enter, .appear-par-enter {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.appear-title-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 0.5s;
+}
+
+.appear-par-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 1.5s;
+}
+
+.appear-btn-enter {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.appear-btn-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 2.5s;
+}
+
 #services {
   background-color: #eef1ed;
   width: 100%;

@@ -65,37 +65,47 @@
 #header_bottom {
   width: 100%;
   height: 680px;
-  background-color: white;
-
+  overflow: hidden;
+  position: relative;
+  // background-color: white;
+  #jumbo_select {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    & > span {
+      display: block;
+      cursor: pointer;
+      width: 8px;
+      height: 28px;
+      background-color: transparent;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      border: 1px solid $blueLagoon;
+      &.j_active {
+        background-color: $blueLagoon;
+      }
+    }
+  }
   .jumbotron {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
+    &.carousel_right {
+      transform: translateX(800px);
+    }
+    &.carousel_center {
+      transform: translateX(0);
+    }
+    &.carousel_left {
+      transform: translateX(-800px);
+    }
     & > img {
       position: absolute;
       bottom: 116px;
       width: 100%;
       transform: scale(1.94);
-    }
-    #jumbo_select {
-      position: absolute;
-      top: 45%;
-      left: 95%;
-      & > span {
-        display: block;
-        cursor: pointer;
-        width: 8px;
-        height: 28px;
-        background-color: transparent;
-        margin-bottom: 5px;
-        border-radius: 5px;
-        border: 1px solid $blueLagoon;
-        &.j_active {
-          background-color: $blueLagoon;
-        }
-      }
-
     }
   }
 
@@ -124,6 +134,10 @@
       width: 90%;
       margin: 10px auto 40px;
     }
+    // .btn_transition {
+    //   transition: all 0.4s ease;
+    //   transition-delay: 3s;
+    // }
   }
 }
 
@@ -149,4 +163,29 @@
       }
     }
   }
+}
+
+.appear-title-enter, .appear-par-enter {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.appear-title-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 0.5s;
+}
+
+.appear-par-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 1.5s;
+}
+
+.appear-btn-enter {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.appear-btn-enter-active {
+  transition: all 0.4s ease;
+  transition-delay: 2.5s;
 }
