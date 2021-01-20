@@ -3,9 +3,10 @@ var app = new Vue(
     el:"#root",
     data: {
       show: false,
-      j_active: 'j_active',
-      j_index: 2,
-      carousel_dir: '',
+      jActive: 'j_active',
+      jIndex: 2,
+      jumboCentTransition: '',
+      carouselDir: '',
       topBtn: "opaNo",
       resultsAnim: '',
       companyAnim: '',
@@ -338,20 +339,24 @@ var app = new Vue(
       },
 
       carousel: function(n) {
+        console.log(n)
         switch (n) {
           case 1:
             this.show = false;
-            this.carousel_dir = 'carousel_right';
+            this.carouselDir = 'carousel_right';
+            this.jumboCentTransition = 'jumbo_center_transition_right',
             setTimeout(() => this.show = true ,0)
             break;
           case 2:
             this.show = false;
-            this.carousel_dir = 'carousel_center';
+            this.carouselDir = 'carousel_center';
+            this.jumboCentTransition = '',
             setTimeout(() => this.show = true ,0)
             break;
           case 3:
             this.show = false;
-            this.carousel_dir = 'carousel_left';
+            this.carouselDir = 'carousel_left';
+            this.jumboCentTransition = 'jumbo_center_transition_left',
             setTimeout(() => this.show = true ,0)
             break;
         }
