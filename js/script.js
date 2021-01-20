@@ -339,7 +339,9 @@ var app = new Vue(
       },
 
       carousel: function(n) {
-        console.log(n)
+        if (n == this.jIndex) {
+          return
+        }
         switch (n) {
           case 1:
             this.show = false;

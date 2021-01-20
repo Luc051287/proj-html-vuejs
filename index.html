@@ -63,7 +63,7 @@
             </div>
           </div>
           <div id="jumbo_select">
-            <span v-for="n in 3" :class="(n == jIndex) ? jActive : ''" @click="[jIndex = n, carousel(n)]"></span>
+            <span v-for="n in 3" :class="(n == jIndex) ? jActive : ''" @click="[carousel(n), jIndex = n]"></span>
           </div>
         </div>
       </header>
