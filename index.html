@@ -51,10 +51,8 @@
               <button class="btn"><a :href="'getInTouchButton'">GET IN TOUCH</a></button>
               <button class="btn second"><a :href="readMoreBtn">READ MORE</a></button>
             </div>
-            <div class="jumbo_select">
-              <span></span>
-              <span class="j_active"></span>
-              <span></span>
+            <div id="jumbo_select">
+              <span v-for="n in 3" :class="(n == j_index) ? j_active : ''" @click="j_index = n"></span>
             </div>
           </div>
         </div>

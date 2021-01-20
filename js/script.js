@@ -2,13 +2,13 @@ var app = new Vue(
   {
     el:"#root",
     data: {
-      items: [1,2,3,4,5,6,7,8,9],
+      j_active: 'j_active',
+      j_index: 2,
       topBtn: "opaNo",
       resultsAnim: '',
       companyAnim: '',
       coboxesAnim: '',
       buttonsAnim: '',
-      self: this.$el,
       isStarted: false,
       indexProjectsMenu: 0,
       active_li: "active_li",
@@ -56,8 +56,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-1.jpg",
           link: "#",
-          id: 1,
-          visible: true
+          id: 1
         },
         {
           title: "President's speech at the annual meeting",
@@ -65,8 +64,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-2.jpg",
           link: "#",
-          id: 2,
-          visible: true
+          id: 2
         },
         {
           title: "Iternational business trip Shangai",
@@ -74,8 +72,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-3.jpg",
           link: "#",
-          id: 3,
-          visible: true
+          id: 3
         },
         {
           title: "Technology workshop with education theme",
@@ -83,8 +80,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-4.jpg",
           link: "#",
-          id: 4,
-          visible: true
+          id: 4
         },
         {
           title: "Donation of clothes and food to the partner NGO",
@@ -92,8 +88,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-5.jpg",
           link: "#",
-          id: 5,
-          visible: true
+          id: 5
         },
         {
           title: "Confraternization of the procurement team",
@@ -101,8 +96,7 @@ var app = new Vue(
           paragraph: "Lorem ipsum dolor sit amet consectetur adisciping elit.",
           imgSrc: "project-6.jpg",
           link: "#",
-          id: 6,
-          visible: true
+          id: 6
         }
       ],
       results: [
@@ -111,7 +105,7 @@ var app = new Vue(
           countStart: 0,
           count: 128,
           multiplier: 0,
-          duration: 1,
+          duration: 0,
           timer: function() {
             if (this.multiplier > this.count - 3) {
               this.duration = 300;
@@ -133,7 +127,7 @@ var app = new Vue(
           countStart: 0,
           count: 230,
           multiplier: 0,
-          duration: 1,
+          duration: 0,
           timer: function() {
             if (this.multiplier > this.count - 3) {
               this.duration = 300;
@@ -155,7 +149,7 @@ var app = new Vue(
           countStart: 0,
           count: 517,
           multiplier: 0,
-          duration: 1,
+          duration: 0,
           timer: function() {
             if (this.multiplier > this.count - 3) {
               this.duration = 300;
@@ -178,7 +172,7 @@ var app = new Vue(
           countStart: 0,
           count: 94,
           multiplier: 0,
-          duration: 1,
+          duration: 0,
           timer: function() {
             if (this.multiplier > this.count - 3) {
               this.duration = 300;

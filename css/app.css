@@ -223,12 +223,12 @@ span.background {
   width: 100%;
   transform: scale(1.94);
 }
-#header_bottom .jumbotron .jumbo_select {
+#header_bottom .jumbotron #jumbo_select {
   position: absolute;
   top: 45%;
   left: 95%;
 }
-#header_bottom .jumbotron .jumbo_select > span {
+#header_bottom .jumbotron #jumbo_select > span {
   display: block;
   cursor: pointer;
   width: 8px;
@@ -238,7 +238,7 @@ span.background {
   border-radius: 5px;
   border: 1px solid #038484;
 }
-#header_bottom .jumbotron .jumbo_select > span.j_active {
+#header_bottom .jumbotron #jumbo_select > span.j_active {
   background-color: #038484;
 }
 #header_bottom #jumbotron_center {
