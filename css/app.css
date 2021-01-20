@@ -245,21 +245,21 @@ span.background {
 #header_bottom .jumbotron .container.jumbo_center_transition_left {
   justify-content: flex-end;
   align-items: center;
-  transform: translateX(800px);
+  transform: translateX(50vw);
 }
 #header_bottom .jumbotron .container.jumbo_center_transition_right {
   justify-content: flex-start;
   align-items: center;
-  transform: translateX(-800px);
+  transform: translateX(-50vw);
 }
 #header_bottom .jumbotron.carousel_right {
-  transform: translateX(800px);
+  transform: translateX(50%);
 }
 #header_bottom .jumbotron.carousel_center {
   transform: translateX(0);
 }
 #header_bottom .jumbotron.carousel_left {
-  transform: translateX(-800px);
+  transform: translateX(-50%);
 }
 #header_bottom .jumbotron > img {
   position: absolute;
@@ -275,6 +275,7 @@ span.background {
 }
 #header_bottom #jumbotron_center.jumbo_center_transition_left, #header_bottom #jumbotron_center.jumbo_center_transition_right {
   margin: 0;
+  transform: translateX(0);
 }
 #header_bottom #jumbotron_center .btn {
   font-size: 1em;

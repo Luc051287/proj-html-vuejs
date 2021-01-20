@@ -98,22 +98,22 @@
       &.jumbo_center_transition_left {
         justify-content: flex-end;
         align-items: center;
-        transform: translateX(800px);
+        transform: translateX(50vw);
       }
       &.jumbo_center_transition_right {
         justify-content: flex-start;
         align-items: center;
-        transform: translateX(-800px);
+        transform: translateX(-50vw);
       }
     }
     &.carousel_right {
-      transform: translateX(800px);
+      transform: translateX(50%);
     }
     &.carousel_center {
       transform: translateX(0);
     }
     &.carousel_left {
-      transform: translateX(-800px);
+      transform: translateX(-50%);
     }
     & > img {
       position: absolute;
@@ -130,6 +130,7 @@
     width: 500px;
     &.jumbo_center_transition_left, &.jumbo_center_transition_right {
       margin: 0;
+      transform: translateX(0);
     }
     .btn {
       font-size: 1em;
