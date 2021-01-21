@@ -272,6 +272,7 @@ span.background {
   text-align: center;
   margin: auto;
   width: 500px;
+  z-index: 3;
 }
 #header_bottom #jumbotron_center.jumbo_center_transition_left, #header_bottom #jumbotron_center.jumbo_center_transition_right {
   margin: 0;
