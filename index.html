@@ -12,7 +12,9 @@
     <title>Consultant</title>
   </head>
   <body>
+    <!-- VUE CONTAINER -->
     <div id="root">
+      <!-- HEADER TOP -->
       <div id="header_top">
         <div id="infos" class="container">
           <div id="infos_left">
@@ -26,6 +28,7 @@
           </div>
         </div>
       </div>
+      <!-- HEADER TOP - STICKY NAVBAR -->
       <nav id="navbar">
         <div id="navbar_container" class="container">
           <div id="navbar_left">
@@ -41,8 +44,12 @@
           </div>
         </div>
       </nav>
+
+      <!-- MAIN HEADER -->
       <header>
+        <!-- HEADER BOTTOM -->
         <div id="header_bottom">
+          <!-- MAIN JUMBOTRON-->
           <div class="jumbotron" :class="carouselDir">
             <img src="img/bg-parallax.png" alt="">
             <div class="container" :class="jumboCentTransition">
@@ -62,12 +69,17 @@
               </div>
             </div>
           </div>
+          <!-- JUMBOTRON BACKGROUND SELECTION-->
           <div id="jumbo_select">
             <span v-for="n in 3" :class="(n == jIndex) ? jActive : ''" @click="[carousel(n), jIndex = n]"></span>
           </div>
         </div>
       </header>
+      <!-- /MAIN HEADER -->
+
+      <!-- MAIN -->
       <main>
+        <!-- SERVICES -->
         <div id="services">
           <div id= "services_container" class="container">
             <p class="margin_bottom main_par" >our business area</p>
@@ -88,7 +100,7 @@
             </div>
           </div>
         </div>
-
+        <!-- ABOUT -->
         <div id="about">
           <div class="bullets"></div>
           <img src="img/bullets.png" alt="">
@@ -128,14 +140,14 @@
 
           <div class="company right"></div>
         </div>
-
+        <!-- PROJECTS -->
         <div id="projects">
           <div id="actions_projects_container" class="container">
             <div class="up_container">
               <p class="margin_bottom main_par" >we do more for everyone</p>
               <h2 class="margin_bottom main_titles"> <span>Actions &</span> <span class="background">Projects</span> </h2>
               <ul class="navbar_h">
-                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? active_li : '' " @click="indexProjectsMenu = index">{{type}}</li>
+                <li v-for="(type, index) in projectsTypes" :class="(index == indexProjectsMenu) ? activeLi : '' " @click="indexProjectsMenu = index">{{type}}</li>
               </ul>
             </div>
             <div class="bottom_container">
@@ -157,7 +169,7 @@
             </div>
           </div>
         </div>
-
+        <!-- RESULTS -->
         <div id="results">
           <div id="results_container" class="container">
             <p class="margin_bottom main_par" >what are we doing</p>
@@ -170,13 +182,13 @@
             </div>
           </div>
         </div>
-
+        <!-- LOGOS -->
         <div id="logos">
           <div id="logos_container" class="container">
             <img v-for="logo in partnersLogo" :src="'img/' + logo" alt="">
           </div>
         </div>
-
+        <!-- FORM -->
         <div id="form">
           <div id="form_container" class="container">
             <div class="form_details left">
@@ -213,6 +225,9 @@
           </div>
         </div>
       </main>
+      <!-- /MAIN -->
+
+      <!-- FOOTER -->
       <footer>
         <div id="footer_top">
           <div id="footer_top_container" class="container">
@@ -252,6 +267,7 @@
           <i class="fas fa-arrow-up" :class="topBtn" @click="scrollToTop()"></i>
         </div>
       </footer>
+      <!-- /FOOTER -->
     </div>
     <script src="js/script.js" charset="utf-8"></script>
   </body>

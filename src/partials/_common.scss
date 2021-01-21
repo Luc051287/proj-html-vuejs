@@ -1,3 +1,5 @@
+// GENERAL
+
 * {
   @include boxSizing;
   margin: 0;
@@ -48,6 +50,26 @@ p.sub_par {
   @include centered;
 }
 
+span {
+  color: $bigstone;
+}
+
+span.background {
+  @include spanBackground($blueLagoon, $backGroundWordGray);
+  padding: 0 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.main_par {
+  text-transform: uppercase;
+  color: $fountainBlue;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+// BUTTONS
+
 .btn {
   border: none;
   border-radius: 5px;
@@ -86,27 +108,7 @@ p.sub_par {
   }
 }
 
-span {
-  color: $bigstone;
-}
-
-span.background {
-  @include spanBackground($blueLagoon, $backGroundWordGray);
-  padding: 0 10px;
-  margin-left: 5px;
-  border-radius: 5px;
-}
-
-.margin_bottom {
-  margin-bottom: 30px;
-}
-
-.main_par {
-  text-transform: uppercase;
-  color: $fountainBlue;
-  font-weight: 700;
-  font-size: 0.8em;
-}
+// NAVBARS
 
 .navbar_h {
   height: 100%;
@@ -138,10 +140,16 @@ span.background {
   border-radius: 5px;
 }
 
+// ATTRIBUTES
+
 .opaYes {
   opacity: 1;
 }
 
 .opaNo {
   opacity: 0;
+}
+
+.margin_bottom {
+  margin-bottom: 30px;
 }

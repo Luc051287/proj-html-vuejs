@@ -14,7 +14,7 @@ var app = new Vue(
       buttonsAnim: '',
       isStarted: false,
       indexProjectsMenu: 0,
-      active_li: "active_li",
+      activeLi: "active_li",
       mainLogo: "logo.png",
       projectsTypes: ["all","institutional", "social", "events", "innovation", "environment", "technology"],
       openingTime: ["clock", "Open hours: Mon - Sat - 9:00 - 18:00"],
@@ -337,7 +337,6 @@ var app = new Vue(
           }
         }
       },
-
       carousel: function(n) {
         if (n == this.jIndex) {
           return

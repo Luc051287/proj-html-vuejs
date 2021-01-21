@@ -49,6 +49,25 @@ p.sub_par {
   margin: auto;
 }
 
+span {
+  color: #1e2d36;
+}
+
+span.background {
+  color: #038484;
+  background-color: #cfe3e4;
+  padding: 0 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.main_par {
+  text-transform: uppercase;
+  color: #52bbba;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
 .btn {
   border: none;
   border-radius: 5px;
@@ -87,29 +106,6 @@ p.sub_par {
   color: #FFFFFF;
 }
 
-span {
-  color: #1e2d36;
-}
-
-span.background {
-  color: #038484;
-  background-color: #cfe3e4;
-  padding: 0 10px;
-  margin-left: 5px;
-  border-radius: 5px;
-}
-
-.margin_bottom {
-  margin-bottom: 30px;
-}
-
-.main_par {
-  text-transform: uppercase;
-  color: #52bbba;
-  font-weight: 700;
-  font-size: 0.8em;
-}
-
 .navbar_h {
   height: 100%;
   line-height: 70px;
@@ -146,6 +142,10 @@ span.background {
 
 .opaNo {
   opacity: 0;
+}
+
+.margin_bottom {
+  margin-bottom: 30px;
 }
 
 #header_top {
