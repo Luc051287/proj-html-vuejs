@@ -272,7 +272,6 @@ span.background {
   text-align: center;
   margin: auto;
   width: 500px;
-  z-index: 3;
 }
 #header_bottom #jumbotron_center.jumbo_center_transition_left, #header_bottom #jumbotron_center.jumbo_center_transition_right {
   margin: 0;
@@ -791,7 +790,7 @@ span.background {
   background: url("../img/chevron-down-solid.svg") 95% center no-repeat #eef1ed;
   background-size: auto 35%;
   border: none;
-  width: calc(50% - 20px);
+  width: 150px;
   padding: 10px;
   height: 43px;
   margin: 10px 20px 10px 0;
