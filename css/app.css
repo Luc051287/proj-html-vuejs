@@ -182,7 +182,7 @@ span.background {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 4;
 }
 #navbar #navbar_container {
   display: flex;
@@ -272,6 +272,7 @@ span.background {
   text-align: center;
   margin: auto;
   width: 500px;
+  z-index: 3;
 }
 #header_bottom #jumbotron_center.jumbo_center_transition_left, #header_bottom #jumbotron_center.jumbo_center_transition_right {
   margin: 0;
